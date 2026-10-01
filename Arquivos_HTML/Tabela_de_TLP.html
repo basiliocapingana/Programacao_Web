@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabelas - Páginas 18 e 19</title>
+    <style>
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            margin: 24px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        /* ---------- Basílio CTO Tabela da página 18 ---------- */
+        .climas {
+            background: #ddd;
+            border-collapse: separate;
+            border-spacing: 4px;
+        }
+
+        .climas th {
+            background: #666;
+            color: white;
+            padding: 8px;
+        }
+
+        .climas td {
+            vertical-align: top;
+            padding: 8px;
+        }
+
+        .climas .paises td {
+            background: #ccc;
+            text-align: center;
+            padding: 6px 14px;
+        }
+
+        .climas .descricao {
+            background: #2e8097;
+            color: #0a2a33;
+            height: 90px;
+        }
+
+        /* ----------Basílio CTO Tabela da página 19 ---------- */
+        .sais {
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .sais th,
+        .sais td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .sais .secao {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Basílio CTO ===================== PÁGINA 18 ===================== -->
+    <h2>Página 18</h2>
+
+    <table class="climas" border="1">
+        <thead>
+            <tr>
+                <th colspan="2">Climas de América do Sul</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <!-- Basílio CTO Célula da esquerda: texto + tabela dentro da célula -->
+                <td>
+                    <table>
+                        <tr>
+                            <td>Norte da América de Sul. Países como:</td>
+                            <td>
+                                <table class="paises" border="1">
+                                    <tr>
+                                        <td>Venezuela</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Colômbia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Equador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perú</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+                <!-- Basílio CTO Célula da direita -->
+                <td>
+                    <table>
+                        <tr>
+                            <td>Sul da América do Sul. Países como:</td>
+                            <td>
+                                <table class="paises" border="1">
+                                    <tr>
+                                        <td>Argentina</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chile</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Uruguai</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paraguai</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="descricao">Floresta tropical, clima de savana, clima marítimo com invernos secos.</td>
+                <td class="descricao">Climas marítimos com verões secos, com invernos secos, climas frios, clima de
+                    estepe, clima desértico.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Página 19</h2>
+
+    <table class="sais" border="1">
+        <thead>
+            <!-- Basílio CTO Linha 1 do cabeçalho -->
+            <tr>
+                <th rowspan="2">Tipo do sal N°</th>
+                <th colspan="6">Composição %</th>
+                <th rowspan="2">Temperatura de Fusão (°C)</th>
+                <th rowspan="2">Temperatura de trabalho (°C)</th>
+            </tr>
+            <!-- Basílio CTO Linha 2 do cabeçalho -->
+            <tr>
+                <th>BaCl2</th>
+                <th>NaCl</th>
+                <th>KCl</th>
+                <th>CaCl2</th>
+                <th>NaNO3</th>
+                <th>KNO3</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td class="secao" colspan="9">Sais para Austenitização:</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>98-100</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>950</td>
+                <td>1030-1300</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>80-90</td>
+                <td>10-20</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>870</td>
+                <td>930-1300</td>
+            </tr>
+
+            <tr>
+                <td class="secao" colspan="9">Sais para pré-aquecimento:</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>70</td>
+                <td>30</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>335</td>
+                <td>700-1035</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>55</td>
+                <td>20</td>
+                <td>25</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>550</td>
+                <td>590-925</td>
+            </tr>
+
+            <tr>
+                <td class="secao" colspan="9">Têmpera e revenimento:</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>30</td>
+                <td>20</td>
+                <td>-</td>
+                <td>50</td>
+                <td>-</td>
+                <td>-</td>
+                <td>450</td>
+                <td>500-675</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>50-80</td>
+                <td>20-45</td>
+                <td>250</td>
+                <td>285-575</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

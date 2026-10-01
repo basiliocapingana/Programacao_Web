@@ -1,0 +1,161 @@
+body {
+    background-color: black;
+    color: white;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border: 1px solid white;
+    box-shadow: 0 0 15px white;
+    width: 420px;
+    padding: 40px;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        width: 100%;
+        height: 50px;
+        background-color: transparent;
+        border: none;
+        margin-bottom: 30px;
+        position: relative;
+
+        input {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid white;
+            padding-right: 30px;
+            outline: none;
+            color: white;
+            font-size: 14px;
+        }
+
+        label {
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50);
+            font-size: 14px;
+        }
+    }
+
+    .mostrar_e_lembrar_senha {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-top: 30px;
+
+        input {
+            accent-color: red;
+            margin-right: 5px;
+        }
+        label {
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    .botao-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 45px;
+        margin-bottom: 30px;
+
+        button {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 5px white;
+        }
+    }
+
+    .criar_conta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: white;
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+.container:hover {
+    border-color: red;
+    transition: .7s;
+    box-shadow: 0 0 15px 5px red;
+    h1 {
+        transition: .7s;
+        color: red;
+    }
+
+    .form-group label {
+        color: red;
+    }
+
+    .mostrar_e_lembrar_senha label {
+        color: red;
+    }
+
+    .mostrar_e_lembrar_senha a {
+        color: red;
+    }
+
+    .criar_conta p,
+    .criar_conta a {
+        color: red;
+    }
+
+    .form-group input {
+        border-color: red;
+    }
+
+    .botao-login button {
+        transition: .7s;
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.61);
+        background-color: rgb(255, 0, 0);
+    }
+}
+
+.form-group input:focus~label,
+.form-group input:valid~label {
+    color: red;
+    transition: .7s;
+    top: 0px;
+}
+
+.botao-login button:hover {
+    cursor: pointer;
+}
+
+.mostrar_e_lembrar_senha label:hover,
+.mostrar_e_lembrar_senha input:hover {
+    cursor: pointer;
+}

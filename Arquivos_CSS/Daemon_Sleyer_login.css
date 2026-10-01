@@ -1,0 +1,39 @@
+body {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/tanjiro-kamado-red-3840x2160-22577.png);
+    background-position: center;
+    background-size: cover;
+}
+
+* {
+    color: red;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    border: 1px solid red;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    section {
+        padding: 20px;
+        border: 1px solid red;
+        flex: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        table {
+            text-decoration: white;
+        }
+    }
+}
