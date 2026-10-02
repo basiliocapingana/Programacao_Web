@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    background-color: black;
+}
+.topo-da-pagina {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    .logo-da-pagina {
+        font-size: 2rem;
+        color: red;
+    }
+
+    button {
+        width: 150px;
+        background-color: transparent;
+        border: 1px solid red;
+        border-radius: 10px;
+
+        a {
+            color: red;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+
+    .barra-de-pesquisa-header {
+        width: 50%;
+        height: 50px;
+        position: relative;
+
+        input {
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+            border-radius: 10px;
+            background-color: transparent;
+            color: red;
+            outline: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 20px 10px 20px 40px;
+        }
+
+        label {
+            color: red;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 40px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+    
+}
+
+.navegador-1 {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+
+    a {
+        color: red;
+        text-decoration: none;
+    }
+}

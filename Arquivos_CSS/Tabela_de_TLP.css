@@ -1,0 +1,55 @@
+ body {
+            font-family: Verdana, Arial, sans-serif;
+            margin: 24px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        /* ---------- Basílio CTO Tabela da página 18 ---------- */
+        .climas {
+            background: #ddd;
+            border-collapse: separate;
+            border-spacing: 4px;
+        }
+
+        .climas th {
+            background: #666;
+            color: white;
+            padding: 8px;
+        }
+
+        .climas td {
+            vertical-align: top;
+            padding: 8px;
+        }
+
+        .climas .paises td {
+            background: #ccc;
+            text-align: center;
+            padding: 6px 14px;
+        }
+
+        .climas .descricao {
+            background: #2e8097;
+            color: #0a2a33;
+            height: 90px;
+        }
+
+        /* ----------Basílio CTO Tabela da página 19 ---------- */
+        .sais {
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .sais th,
+        .sais td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .sais .secao {
+            text-align: left;
+        }
