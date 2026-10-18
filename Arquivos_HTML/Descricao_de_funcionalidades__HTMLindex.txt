@@ -1,0 +1,333 @@
+<!--
+HyperText Marckup Language
+UTF-8: serve pra padronizar os textos em diferentes idiomas.
+
+A meta tag: <meta http-equiv="X-UA-Compatible" content="IE=edge"> é usada pra que o navegador use a versão mais recent do browser instalado, permitindo que o site abra sen problemas de conexão.
+
+A meta tag: <meta name="viewport" content="width=device-width, initial-scale=1.0"> é usada pra que o site se autoredimenciona pra tela em que for aberto.
+
+A meta tag: <meta name="description" content="Esse é o meu primeiro site!"> é usada pra fazer uma breve descrição do site
+
+A meta tag: <title>Darkplay Channel</title>
+é o titulo do site
+
+A meta tag: <meta name="keywords" content="Vídeos jogos"> é usada pra colocar palavras chaves, facilitando o processo de busca do navegador
+
+A meta tag: <meta name="author" content="Basílio António Capingana"> é usada pra mencionar o responsavél do site.
+
+______________________
+CONHECENDO AS TAGS:
+______________________
+
+Tags de cabeçalho: são representadas por <h> de head, e vão de <h1> até <h6>, são titulos que são organizados do mais relevante ao menos importante.
+exemplo:
+
+<h1>Titulo 1</h1>
+<h2>Titulo 2</h2>
+<h3>Titulo 3</h3>
+<h4>Titulo 4</h4>
+<h5>Titulo 5</h5>
+<h6>Titulo 6</h6>
+
+OBS: Titulos não devem ser usados pra aumentar o tamanho da letra, eles só são usados pra mostrar a importância do texto
+
+Tag paragráfo: representa-se por <p>texto</p> e é usada pra por um texto na pagina, e as tags do tipo paragráfos ficam dentro das tags de cabeçalhos, assim:
+<h1>Estudando html</h1>
+<p>"Bem-vindo ao meu espaço gamer! Aqui você encontra gameplays cheios de energia, explorando diferentes mundos virtuais com diversão, estratégia e emoção. Além das partidas, trago também momentos musicais especiais: aquelas trilhas sonoras que embalam os jogos e fazem parte da experiência única de jogar.
+
+O canal é feito para quem ama acompanhar jogadas, descobrir novos títulos e sentir a vibe das músicas que tornam cada gameplay inesquecível. Se você curte games e quer mergulhar nesse universo com jogadas autênticas e sons marcantes, este é o lugar certo!"</p>
+
+____________________________
+texto aleatorio com lorem:
+p>lorem + Enter
+____________________________
+
+OBS: No nosso site só deve ter uma tag do tipo h1, pois assim o browser vai identificar melhor de que tipo de coteúdo o teu site trata!
+
+____________________
+FORMATAÇÃO DE TEXTO:
+____________________
+
+ p*3>lorem : cria varios paragrafos de uma só vez
+
+Tag <b>texto</b> : torna o texto em negrito
+<p>texto <b>texto</b> texto</p>
+
+Tag <strong>texto</strong>: também deixa em negrito, mas é pra dar enfase na frase ou palavra
+serve mais pra destacar um texto.
+
+Tag hr: serve pra colocar uma linha pra separar textos
+exemplo:
+<p>Texto</p>
+<hr>
+<p>Texto</p>
+
+resultado:
+Texto
+___________________
+Texto
+___________________
+
+Tag br: serve pra fazer um texto pular uma linha
+<br> Texto
+
+Tag <mark></mark>: serve pra pintar o texto
+
+Tag <i></i>: serve para colocar um texto em italico
+
+Tag <u></u>: Serve para sublinhar o texto
+
+Tag <small></small>: serve para colocar um texto em um tamanho menor que as normias
+
+Tag <del></del>: serve pra colocar um traço no meio do texto, como se fosse riscado bem no meio
+
+Tag <strike></strike>: faz o mesmo que o del faz, só que é mais antigo e já está a ser pouco usado, pois os navegadores vão parar de interpretar essa tag
+
+Tag <sup></sup>: É usada para colocar exponecial a um numero.
+exemplo 210:
+2<sup>10</sup>
+saída 2^10
+
+Tag <sub></sub>: Faz o contrario que o sup,m pois o 10 ficará em baixo, ao invés de estar em cima
+
+Atenão: as tags <sup></sup> e <sub></sub> não servem só pra números, mas também para textos
+
+_____________________________
+    ELEMENTOS DE CITAÇÃO
+_____________________________
+
+Tag <abbr></abbr>: serve pra abreviar um texto.
+    Se colocares (<abbr title="Coloque um comentario qualquer sobre o texto"></abbr) Coloca um comentario qualquer sobre o texto
+
+Tag <address></address>: serve pra colocar um endereço (Email, Morada, etc..)
+
+Tag <cite></cite>: É usada pra dar titulos de obras (filems, poemas, series, etc...)
+Exemplo:
+        <cite>Avengers</cite>
+
+Tag <q></q>: serve pra por o texto em virgulas altas
+Exemplo:
+        <q>A aula está aborrecida</q>
+        saída : "A aula está aborrecida"
+
+Tag <blockquote></blockquote>: serve pra dar uma citação com o objectivo de comentar o que já está escrito
+
+Tag <bdo dir"ltr or rtl or auto"></bdo>: serve pra inverter o texto. (Left to Right or Right to left)
+
+Tag comentario (Ver o inicio e fim deste arquivo) : é usada pra explicar uma linha de codigo ou marcar uma referencia no codigo: Ctrl + K + C comenta as linhas selecionadas / Ctrl + K + U descomenta as linhas selecionadas
+
+__________________________________
+    LINKS ABSOLUTOS E RELATIVOS
+__________________________________
+
+Tag <a></a>: serve pra colocar um link na pagina
+exemplo:
+<a href="Caminho ou link"></a> na pratica veja o arquivo (Links_index.html) da pasta (Programacao_Web_do_Zero_ao_Avançado), se quiseres que ele abra numa outra janela, coloque assim: <a href="https://google.com" target="_blank"></a>
+
+Para que abra link absoluto: <a href="https://google.com" target="_blank"></a>
+Para que abra link relativo: <a href="nome de um arquivo html" target="_blank"></a>
+Se estiver em pasta diferente usa-se: <a href="nome da pasta/nome do arquivo html" target="_blank"></a>
+
+OBS: Só podes voltar pra uma pagina de um dos arquivos caso estiverem na mesma pasta!
+pra tal, tem que se escrever : <a href="../nome do arquivo html" target="_blank"></a>
+Os (..) indicam que voltou 1 pasta pra aceder a um arquivo pelo link establecido
+Exemplo: <a href="../Exemplo_usado_no_arquivo_Links_index.html" target="_blank"></a>
+(../../../) caso o arquivo html esteja várias pastas atrás.
+
+
+_________________________________
+    TUDO SOBRE IMAGENS
+_________________________________
+
+Tag <img src="caminho onde vai ser colocada a imagem">: serve pra colocar imagem na pagina
+width=" " largura
+height=" " Altura
+OBS: Pra tornar uma imagem clicavél, é só colocar a tag img dentro da tag a
+
+____________________________
+        TABELAS
+____________________________
+
+Tag <table></table>: é a tag de tabela.
+tag <tr></tr>: é a linha
+tag <th></th>: é colun
+tag <td></td>: é onde ficam os dados da tabela referente as colunas
+tag <thead></thead>: é o cabeçalho da tabela
+tag <tfooter></tfooter>: é o rodapé da tabela
+Atributo rowspan: aplica-se nos th e trata de expandir as colunas no sentido vertical
+Atributo colspan: aplica-se nos th e td e trata de expandir as colunas e linhas no senido horizontal
+Sua estrutura basica é:
+
+<table>
+    <tr>
+        <th>
+
+        </th>
+    </tr>
+    <td>qualquer dado ou informação</td>
+</table>
+
+<table width="100%"></table> : trata da largura da tabela
+
+________________________________________
+    LISTAS ORDENADAS E NÃO ORDENADAS
+________________________________________
+
+<ol></ol>: significa lista ordenada
+<ul></ul>: significa lista não ordenada
+A diferença é que a ol organiza em ordem numerica, mas a ul marca ponto
+
+<li></li>: fica dentro das ol e ul, os li são os conteúdos das listas.
+Ver o arquivo (Lista_ordenadas_e_nao_ordenadas_index)
+
+____________________________
+        IFRAMES
+____________________________
+Iframes da-nos a posibilidade de rodar um site externo dentro de uma pagina ou site principal
+Sua estrutura:
+
+<iframe style="border:none;" src="link ou um outro elemento externo" width="" height="" title=""></iframe>
+obs: frameborder="0" faz o mesmo que o style="border:none;"
+
+_____________________________
+        Formularios
+_____________________________
+Sobre ele: Nesta aula do nosso curso de HTML completo vamos aprender como usar os formulários. Os formulários HTML são muito importantes por que é com eles que você recebe entrada de dados. Praticamente tudo o que você utiliza na programação web depende de formulários.
+
+Sua tag principal é a tag: <form></form>
+
+    <form>
+
+        SOBRE O TIPO TEXTO:
+
+        <label for="campo_nome">Nome:</label>
+        <input id="campo_nome" type="text" placeholder="Digite o seu nome"><br><br>
+
+        SOBRE O TIPO PASSWORD:
+
+        <label for="campo_senha">Senha:</label>
+        <input id="campo_senha" type="password" placeholder="Digite uma senha"><br><br>
+
+        SOBRE O TIPO EMAIL:
+
+        <label for="campo_email">Email:</label>
+        <input id="campo_email" type="email" placeholder="Digite o seu email"><br><br>
+
+        SOBRE O TIPO SUBMIT:
+
+
+        <input type="submit" value="Enviar formulário"><br><br>
+
+        «SOBRE O RADIO»
+
+        <input type="radio" name="clima" id="Solarado" value="Solarado">
+        <label for="Solarado">Solarado</label><br>
+
+        <input type="radio" name="clima" id="Chuvoso" value="Chuvoso">
+        <label for="Chuvoso">Chuvoso</label><br>
+
+        <input type="radio" name="clima" id="Nublado" value="Nublado">
+        <label for="Nublado">Nublado</label><br>
+
+        
+    </form>
+
+O for="" funciona junto com id pra ligar o input a uma label (texto).
+
+o submit serve pra enviar o formulario.
+
+o required é um atributo do campo input.
+
+o radio é como uma lista de seleção unica, mas pra isso acontecer, é necessário que os inputs tenham os mesmo name="", mas id="" e value diferentes !
+Ex de categoria animal.:
+
+OBS: O valor do ID e do Value pode ser igual.
+Mas cada elemento da pagina deve ter apenas um único ID.
+
+Pra tornar o radio com uma só escolha, basta colocar o mesmo name="", caso não estraga a finalidade da do metodo ou função.
+
+________________________
+        Áudio
+________________________
+<audio controls>
+    <source src="caminho do arquivo de audio" type="serve pra por o tipo de arquivo seguido por uma barra e depois a    extensão usada na net">
+</audio>
+
+O controls faz com que aparecam os elementos de um reprodutor de audio normal.
+pausa, avançar e outros.
+
+O source é pra indicar qual arquivo de audio vai ser usado
+
+A extensão que ir pra o src, colca-se o seu equivalente no type!
+exemplos de tipo de extensão e as equivalencias:
+Se for (mp3) usa-se mpeg
+Se for ogg usa-se ogg
+Se for wav usa-se wav
+
+______________________
+        Video
+______________________
+Quase igual que a tag audio (Ver arquivo "audio_index.html")
+poster="" serve pra por uma thambanil no video da pagina
+autoplay serve pra reproduzir sozinho
+
+&nbsp;: serve pra dar espaço entre os elementos da pagina
+
+____________________________________
+        Divisorias e html
+____________________________________
+O que são ?
+R: Nesta aula do nosso curso de HTML completo vamos aprender como usar as Divs e entender o que é HTML Semântico. As tags do tipo div e o HTML semântico são muito importantes para uma boa construção de um site.
+
+tag <div></div> é uma tag neutra e serve pra colocar alguns atributos e modelar o layout da pagina.
+Ver arquivo (Divisorias_e_HTML_Semantico)
+
+Tag header significa topo e o navegador entende isso como topo, sem essa tag o navegador não sabe quando é que é um topo ou um cabeçalho
+
+a tag nav dis que é um texto de navegação do site
+
+<header></header>: cabeça da pagina
+
+<nav></nav>: pra navegar entre links
+
+<section></section>: sessão
+
+<article></article>: para conteúdos do tipo artigo
+
+<main></main> : corpo do programa
+
+<footer></footer>: rodapé
+
+tag <figure></figure>: serve pra colocar um texto logo abaxio de um elemento ou imagem.
+Ex.: Imagem do mapa de angola.
+
+<figure>
+    <figcaption> texto </figcaption>
+</figure>
+
+O atributo colspan dentro da td de uma tabela, serve pra definir a qtd de linhas ou colunas que o texto vai ocupar
+
+<details>
+    <summary>
+
+    </summary>
+</details>
+Serve pra esconder um elemento dentro da pagina
+
+<fieldset></fieldset>: serve pra colocar um elemento dentro de uma area, e para legendar a area usa-se o legend
+
+<legend></legend>: pra por legenda na tag acima e explicar pra quê serve o espaço
+
+&lt : igual a <
+&gt : igual a >
+&copy: simbolo de direitos autorais
+
+<thead></thead> : cabeçalho da tabela
+
+<tbody></tbody>  :corpo da tabela
+
+<tfoot></tfoot> : rodapé da tabela
+
+ * autocomplete=" " preenchimento de emial, nome, ou palavra passe
+   ex.: autocomplete="email"
+-->

@@ -1,0 +1,129 @@
+Super CSS ou Sass
+
+para criar o arquivo Sass
+Nome do arquivo.scss
+
+Extenssão : live Sass
+
+Para declarar variavel e usar ela no lugar de certas propriedades usa-se o $ (dolar)
+Ou seja, variaveis declara-se assim:
+$nome-da-variavel
+
+___________________________________________________________
+Nesting (agrupamento): Isso trata dos seletores e classes.
+___________________________________________________________
+ex.: se um header conter dentro dele uma tag do tipo <a></a> no arquivo html, ao inves de:
+
+header {
+    background: white;
+}
+
+header a{
+    color: yellow;
+}
+
+TO
+
+Faz se assim usando o Nesting:
+
+header {
+    background: white;
+    a{
+        color: yellow;
+    }
+}
+Tudo dentro do seletor ou tag principal.
+
+Mas se tu quiseres que aconteça algo quando o mouse passar sobre a tag a e não afetar o header.
+coloque o &:hover{} dentro do alinhamento do seletor ou class da tag em questão, assim só afetará a tag em questão (a).
+
+header {
+    background: white;
+    a{
+        color: yellow;
+        &:hover{
+            display: none
+        }
+    }
+}
+
+========================================
+ GUIA RÁPIDO: Aninhamento e o uso do "&" no Sass
+========================================
+
+1. QUANDO NÃO USAR O "&" (Para estilizar elementos filhos)
+- O que é: Usado quando você quer estilizar uma tag que está DENTRO de um container.
+- Exemplo no Sass:
+  .caixa {
+    p {
+      color: blue;
+    }
+  }
+- O que o CSS gera:
+  .caixa p { color: blue; } 
+  (Aplica apenas ao parágrafo que está dentro da caixa).
+
+---
+
+2. QUANDO USAR O "&" (Para interagir com o próprio elemento)
+- O que é: O "&" representa o elemento atual. É usado para criar estados (como :hover) ou classes modificadoras coladas no elemento.
+- Exemplo no Sass (Hover):
+  .botao {
+    background-color: red;
+    &:hover {
+      background-color: darkred;
+    }
+  }
+- O que o CSS gera:
+  .botao { background-color: red; }
+  .botao:hover { background-color: darkred; } 
+  (Muda o próprio botão quando passa o mouse).
+
+- Exemplo no Sass (Modificador / Classes juntas):
+  .botao {
+    padding: 10px;
+    &.alerta {
+      background-color: orange;
+    }
+  }
+- O que o CSS gera:
+  .botao.alerta { background-color: orange; } 
+  (Aplica se o elemento tiver as duas classes juntas).
+
+---
+REGRA DE OURO PARA MEMORIZAR:
+- Quer estilizar um FILHO lá dentro? -> NÃO use o "&" (ex: p, span, img).
+- Quer mexer no PRÓPRIO elemento (hover, active, classe extra)? -> USE o "&" (ex: &:hover, &.ativo).
+========================================
+
+__________________________
+import
+__________________________
+Isso usa-se para importar um arquivo scss que vai ser usado no site, tipo separar apenas codigos css para uma determinada tag.
+
+_nome do arquivo.scss
+
+@import 'caminho da pasta onde o arquivo está'
+
+./ na mesma pasta seguido do nome do arquivo
+
+Podes importar para a folha css principal, evitando que ela fique cheia de varios codigos.
+se forem muitos, separa por ;
+Assim:
+
+@import '';
+@import '';
+@import '';
+__________________________
+Mixin / include
+__________________________
+É como se fosse uma função que colocas certas caractaristicas de css presentes em varios seletores, caracteristicas ou propriedades (flex, center, etc...)
+
+Como se cria :
+@mixin nome da função(argumento se quiser (javasript)){
+    propriedades css
+}
+
+podes chamar ela em qualquer lugar da folha css:
+
+@include nome da função()

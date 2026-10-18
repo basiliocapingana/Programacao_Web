@@ -1,0 +1,513 @@
+----------------------------------------------
+      CSS - Cascading Style Sheets
+      «Folhas de estilos em cascatas»
+----------------------------------------------
+
+1ª COMO ADICIONAR CSS NO HTML *
+   _dentro da tag <head></head> coloque a tag <link rel="stylesheets" href="link ou caminho do arquivo css">
+
+2ª USAR CSS DENTRO DO HTML SEM CRIAR FOLHA CSS *
+   _ dentro da tag <head></head> coloque a tag <style></style>, e dentro da tag style podes usar as propriedades CSS que quiseres, ex.:
+   <head>
+      <style>
+         body {
+            background-image: url("Daemon sleyer wallpaper.jpg")
+         }
+      </style>
+   </head>
+
+* ------------------------------------------------------------------------------------------- *
+         BONÚS PARA O ESTUDO
+
+         DENTRO DO BODY COLOQUE ESSAS COISAS:
+
+         body {
+            margin:0;
+            padding: 0;
+            height: 100vh; Isso faz com que o body ocupa toda a altura do dispositivo
+         }
+
+         IMPORTANTE PRA NÂO DAR PROBLEMA COM AS MARGENS E PADDINGS DAS DIVs
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+* ------------------------------------------------------------------------------------------- *
+
+ 3ª SELECTORES E CLASSES *
+
+   Seletores:
+      Os selectores são todas as tags que usamos no arquivo html, ex.:
+      div, p, img, video, etc...
+
+   Classes:
+      As classes são identificadores de uma ou várias tags, podendo ser utilizadas para modelar ou estilizar uma tag do tipo div, p, img, video, etc...
+      OBS.: Nomes das classes não começa com números
+      
+      * COMO USAR ? *
+         tag.nome-da-classe + Enter ou <img class="nome-da-class"></img>
+
+         *CHAMAR ELA NA FOLHA CSS*:
+         .nome-da-classe {
+         }
+      
+      _COMO CRIAR 2 IDENTIFICADORES DO TIPO CLASS NUMA UNICA TAG ?
+         <img class="nome-da-classe outro-nome-da-class"></img>
+         RESPOSTA: Basta separar um nome do outro por um espaço, assim ele atenderá a dois nomes.
+
+
+   * ID E COMO USAR*
+      _é um seletor que identifica exclusivamente uma unica tag.
+      OBS.: ID nunca começa com um número, sempre inicia-se com uma letra.
+      * COMO USAR ? *
+         <img id="nome-do-id"></img>
+
+         *CHAMAR ELA NA FOLHA CSS*:
+         #nome-do-id {
+      }
+
+   * PARA QUE TODOS OS SELETORES TENHAM A MESMA PROPRIEDADE *
+      FAZ-SE NA FOLHA DE ESTILO !
+
+         tag1, tag2, tag3, etc... {
+            propriedades
+         }
+
+      * PARA QUE TODO DOCUMENTO HTML TENHA A MASMA PROPRIEDADE *
+         FAZ-SE NA FOLHA DE ESTILO !
+
+         * {
+            propriedades
+         }
+
+4ª PROPRIEDADES BACKGROUNDS *
+   _Essa propriedade trata do fundo dos elementos, pode ser o body, uma div, ou até mesmo o texto.
+
+   * opacity *
+      serve pra deixar um fundo transparente, seus valores vão de 0 até 1.
+
+   * background-color: transparent;
+
+   * background: ; quando queres varios atributos numa só linha
+
+   * background-color: cor; cor solida de fundo
+
+   * background-image: tem vários atributos;
+      background-image: url(caminho da imagem); serve pra colocar uma imagem como fundo de uma div, texto, body, etc...
+
+   * background-size: Tem 2 atributos;
+      contain e cover:
+
+      contain: ele  não se encaixa no elemento por completo, mas sim repete uma parte da imagem só pra _preencher o espaço em que ela está.
+
+      _cover: ele ajusta a imagem dentro do elemento em que está.
+
+   * background-repeat: tem vários atributos;
+      repeat, no-repeat, repeat-x, repeat-y:
+
+      _repeat: serve pra repetir a imagem e força-lá a preencher o espaço.
+      _no-repeat: Faz o inverso do de cima.
+      _ repeat-x: repete só no eixo x (horizontal)
+      _repeat-y: repete só no eixo y (vertical)
+
+   * background-position: tem varios atributos;
+      center, top, bottom, left, right
+
+      _center: mostra a parte do meio da imagem
+      _top: mostra a parte de cima da imagem
+      _right: mostra a parte direita da imagem
+      _bottom: mostra a parte de baixo da imagem
+      _left: mostra a parte esquerda da imagem
+
+5ª BORDER OU BORDAS *
+   * border:; podes colocar vários atributos ao mesmo tempo
+
+   * outline: none; tira a borda predefinida dos inputs
+
+   * accent-color: cor ; tira a cor da caixa do checkbox
+
+   * border: espessura-da-borda tipo-de-borda cor;
+      ex.: border: 1px solid black;
+
+   * TIPOS DE BORDAS *
+      _solid : borda normal
+
+      _ dotted: com pontinhos
+
+      _dashed: tracinhos
+
+      _double: dupla
+
+      _groove: efeito 3d
+
+      _ridge: ????
+
+      _inset: por dentro mas com efeito 3D
+
+      _outset: por fora mas com efeito 3D
+
+      none: nenhuma
+
+      _hidden: oculta
+
+   * POSIÇÕES DAS BORDAS *
+      border-left
+      border-right
+      border-top
+      border-bottom
+
+   * BORDA ARREDONDADA *
+      border-radius: % ou px(melhor);
+
+6ª MARGIM *
+   _As margins tratam do espaçamento externo entre os elementos dentro de um cantainer.
+   margin: px ou %
+   margin: px; aplica uniformemente
+
+   * POSIÇÔES DAS MARGINS *
+      margin-top: cima
+      margin-right:direita
+      margin-bottom: baixo
+      margin-left:esquerda
+
+   * NUMA SÓ LINHA *
+      margin: top direita baixo esquerda;
+
+7ª PADDING ou PREENCHIMENTO *
+   _Ele trata do preenchimento interno.
+   padding: px ou %
+   padding: px; aplica uniformemente
+
+   * POSIÇÔES DO PADDING *
+      padding-top: cima
+      padding-right:direita
+      padding-bottom: baixo
+      padding-left:esquerda
+
+   * NUMA SÓ LINHA *
+      padding: top direita baixo esquerda;
+
+8ª PROPRIEDADE WIDHT E HEIGHT *
+   _Um trata da largura(width) e outra trata da altura(height)
+
+   width: px ou %;
+   height: px ou %;
+   max-width: px ou %;
+   min-width: px ou %;
+   max-height: px ou %;
+   min-height: px ou %;
+
+9ª PROPRIEDADE TEXT *
+   trata do alinhamento do texto dentro de um container
+   text-align: tem varias propriedades;
+
+   _text-align:right
+   _text-align:center
+   _text-align:left
+   _text-align:justify
+
+   _direction: rtl; da direita pra esquerda
+   _direction: ltl; da esquerda pra direita
+   _unicode-bidi: bidi-override; texto fica ao contrario, usado pra idiomas escritos de forma contraria
+
+   _text-decoration: none; tira a linha do link
+   _text-decoration: overline; coloca uma linha em cima do texto
+   _text-decoration: line-through: coloca linha de riscar no meio do texto
+   _text-decoration: underline; sublinhado
+
+   _text-transform: uppercase; tudo em maiúsculas
+   _text-transform: lowercase; tudo em minúsculas
+   _text-transform: capitalize; a primeira palavra em maiúsculas
+   _text-ident: serve pra recuar a primeira linha de um paragrafo
+   _letter-spacing: px ; espaçamento entre letras
+   _line-height: casas decimais(melhor) ou px; espaçamentos entre as linhas de texto
+   _word-spacing: px ; espaçamento entre palavras
+
+10ª FONT FONTE DE TEXTO *
+   font-family: ; adiciona um tipo de fonte já disponiveis no vs code.
+   font-size: px ; tamanho da font ou texto
+
+   * COMO ADICNIONAR FONTES EXTERNAS DO GOOGLE FONT ? *
+
+   fonts.google.com
+      selecione a fonte desejada
+      selecione o tipo de import: link(vai pra o arquivo html) ou import(vai pra o arquivo css)
+
+   font-style: italic, normal, oblique ; mostra o estilo de fonte
+   font-weight: ; determina a grossura do texto
+      ex.: bold ; coloca em negrito.
+
+11ª DISPLAY (SEM FLEXBOX, SOMENTE DISPLAY) *
+   Elssa propriedade diz Se ou Como ele vai ser exibido na tela.
+
+   * TIPOS DE DISPLAY *
+   _display: block; Esse tipo de display ocupa de ponta a ponta a tela.
+   Ex.: div, p, h, img, header, footer, form, section.
+   Ou seja , eles pulam linha quando um elemento é posto logo a seguir a ele.
+   A largura e altura funciona muito bem com esse tipo de display.
+
+   _display: inline; Esse tipo de display só ocupa o espaço que o elemento dentro dele necessita.
+   O  display inline não pula linha, coloca tudo na mesma linha.
+
+   _display: none; esconde um elemento na pagina, torna invisivel e tira o espaço ocupado por ele
+
+   O display: inline; Ele se comporta como se fossem palavras, por isso é que tem sempre um pequeno espaço entre os elementos mesmo não dando margem. A largura e altura não funciona nesse tipo de display, nem se quer a margin funciona.
+
+   display: inline-black; Torna na mesma linha e permite width e height
+
+   * propriedade visibility *
+      _visibility: hidden; torna invisivel mas os espaço ocupado pelo elemento invisivel permanesse.
+
+   OBS: O display inline ou block não só funciona na div pai como também na div filho, ou seja, os efeitos desse tipo de display afectam a div filho mesmo sem que ele esteja presente na div pai
+
+12ª POSITION *
+   _position: static; impede um elemento de se mover na tela, por padrão os elementos vêm com esse tipo de position.
+
+   position: relative; trata do posicionamento de um elemento em relação ao container paai.
+   ONDE SE APLICA ?
+      coloca-se o position: relative; na div ou container que se quer posicionar e não na div pai.
+      colocando um position relative na div filho, desbloquea-se (left, right, center, bottom) Seus valores são px(mais comum) ou %.
+
+      Quando se usa um desses (left, right, center, bottom) diz se que o elemento se desloca da posição que está pra posição contraria:
+      ex.: Se a div está no topo, ela vai sair do topo pra baixo
+
+      z-index: - até 999; Trata da visibilidade dos elementos na tela, especifica quem fica afrente ou atrás
+      ele pode ser um numero - até 999, quem tiver maior numero fica afrente.
+
+      _position: fixed; impede com que um elemento saia da vista do usuário mesmo que rolem a tela pra baixo ou cima.
+      O fixed não precisa de ter o position relative na div ou no elemento. basta chamar o position fixed.
+
+      * POSITION ABSOLUTE *
+         Trata do posicionamento de um elemento em relação a div pai.
+
+         *COMO FUNCIONA ? *
+            coloca-se o position: relative; na div pai, nunca static, qualquer um menos static
+            depois coloca-se position: absoluta; na div filho.
+            depois usa-se um dos (left, right, center, bottom) pra posicionar o elemento onde se quer.
+
+      _position: sticky; É quase igual ao fixed mas significa pegajoso.
+
+13ª OVERFLOW *
+   Ela propriedade trata dos casos em que um elemento é maior do que a div pai, ele ajusta, recorta ou faz qualquer coisa pra organizar esse caso.
+   Mas isso só acontece quando na div pai é determinado uma altura inicial, quando isso não há ele se ajusta automaticamente.
+
+   * TIPOS DE OVERFLOW *
+      _overflow: visibility; É o padrão de todas as div.
+      _overflow: hidden; mostra apenas os elementos que se encaixam na altura da div pai, o resto ele oculta.
+      _overflow: scroll; ele coloca uma barra de rolagem e permite navegar pra enchergar o resto.
+      _overflow: auto; ele é automatico, só vai colocar a barra de rolagem se for necessário.
+
+      Pode se usar o overflow no body, usando overflow-y (eixo vertical) e overflow-x (eixo horizontal), esses dois pode-se usar tambem em qualquer div pai, não só no body.
+
+14ª PROPRIEDADE FLOAT *
+   A propriedade float é usada para posicionamento e formatação de conteúdo, por exemplo, deixar uma imagem flutuar para esquerda enquanto o texto fica a direita. A propriedade float "desprende" o elemento do fluxo normal da página deixando ela "solta" ou "flutuante".
+
+   clear:both; limpa o ponto de flutuação.
+
+   float:left — o elemento flutua à esquerda.
+   float:right — o elemento flutua à direita.
+   float:none — o elemento mantém o fluxo normal. (valor padrão)
+   inline-start e inline-end (para escrita horizontal LTR/RTL em CSS moderno).
+
+15ª EFEITO GRADIENTE *
+   background-image: linear-gradient(cor1(topo), cor2(baixo))
+   background-image: linear-gradient(to right cor1(topo), cor2(baixo)) da esquerda pra direita.
+   background-image: linear-gradient(to left cor1(topo), cor2(baixo)) da direita para esquerda.
+   background-image: linear-gradient(to bottom cor1(topo), cor2(baixo)) de baixo para cima.
+
+   * Para colocar gradiante na obliqua:
+      background-image: linear-gradient(to top right cor1(topo), cor2(baixo)) de cima para direita.
+      background-image: linear-gradient(to top left cor1(topo), cor2(baixo)) de cima para esquerda.
+
+   * para usar gradiante com graus:
+      background-image: linear-gradient(180deg cor1(topo), cor2(baixo)) horizontal.
+      background-image: linear-gradient(90deg cor1(topo), cor2(baixo)) Vertical.
+      background-image: linear-gradient(45deg cor1(topo), cor2(baixo)) obliqua.
+
+   * para dar um efeito gradiante em circulo:
+      Usa-se background-image: radial-gradiant(cor1(meio), cor2) (%) opcional
+
+16ª PROPRIEDADE TEXT-SHADOW E BOX-SHADOW *
+   valores em px
+   text-shadow: horizontal vertical suavisação ou desfoque cor;
+   text-shadow: 1px 1px 2px red;
+
+   box-shadow: horizontal vertical suavisação ou desfoque cor;
+   box-shadow: 1px 1px 2px red;
+
+17ª EFEITOS DE TEXTOS *
+   white-space: nowrap; o texto fica na mesma linha.
+   text-overflow: ellipsis; reduz o texto e coloca 3 pontos.
+
+
+18ª MEDIA QUERIES *
+   /* Smartphones (600px para baixo) */
+   @media only screen and (max-width: 600px) {...}
+
+   /* Dispositivos um pouco maiores, mas ainda pequenos (Pequenos Tablets e Smartphones + largos, 600px para cima) */
+   @media only screen and (min-width: 600px) {...}
+
+   /*Dispostivos Médios (Tablets deitados, 768px para cima) */
+   @media only screen and (min-width: 768px) {...}
+
+   /* Dispostivos Largos (laptops/desktops, 992px para cima) */
+   @media only screen and (min-width: 992px) {...}
+
+   /* Super Largos (Telas maiores laptops, desktops e até TVs, 1200px para cima) */
+   @media only screen and (min-width: 1200px) {...}
+
+   19ª FLEXBOX *
+      O flexbox facilita o design de estrutura flexível para layout responsivos sem o uso de flutuação (float) ou posicionamento (position).
+
+      A flexbox trata do posicionamento das div dentro da div pai, é dentro da div pai que vai se saber como eles vão se posicionar.
+      
+      * COMO TRABALHAR COM FLEXBOX *
+
+         sempre colocar na div pai o display: flex; na div pai;
+         OBS: Os elementos ficaram em linha logo depois de aplicar o display flex.
+         depois será possivel usar outras propriedades do flexbox.
+
+         Todas as propriedades do display: flex; são aplicadas na div pai e não nas filhas.
+
+         * flex-direction: colum; deixa as divs filhas em coluna.
+         * flex-direction: row; deixa as divs filhas em linha.
+         * flex-direction: row-reverse; joga pra o lado contrario e inverte a posição dos elementos.
+         * flex-direction: colum-reverse; Faz o mesmo que o de cima, mas em coluna.
+         * flex-wrap: nowrap; mesmo que a div pai tenha um tamanho limitado, ela não se vai expandir, mas sim  vai fazer com que os elementos saiam pra fora da div pai mesmo que queiras que eles fiquem dentro.
+
+         O flex-wrap: nowrap; é o padrão de todas as divs, ou seja não é necessário colocar nas div.
+
+         flex-wrap: wrap; + flex-direction: row Isso faz com que caso chegue no limite da largura da div eles vão obrigar pular uma linha pra dar continuidade.
+
+         * Podes escrever só o flex-flow: row wrap; faz o mesmo do de cima. *
+         * Tudo isso na div pai *
+
+      * POSICIONAMENTO HORIZONTAL NA DIV PAI justify-content *
+         justify-content: flex-start; é o padrão de todas, começa no inicio da div pai(a esquerda)
+         justify-content: flex-end; coloca no fim da div pai(direita.)
+         justify-content: center; alinha ao centro.
+         justify-content: space-between; trata do espaçamento uniforme entre os elementos da div:
+            O 1º vai pra o lado esquerdo e o 2º ai pra o lado direito, e o resto ficam organizados no meio deles.
+         justify-content: space-around; espaçamento em volta do elementos.
+
+         * LEMBRANDO QUE ISSO TUDO É FEITO NA DIV PAI *
+
+      * POSICIONAMENTO VERTICAL NA DIV PAI align-items *
+         Padrão de todas as divs pai é align-items: stretch; coloca as div filhas a ocuparem a altura total da div pai. Esse efeito só vai ser possivel se ele o align-items: stretch for ou não colocado na div pai.
+
+         * Se o align-items: stretch; for colocado na div pai as filhas vão ocupar a altura total da div pai
+         * Se o align-items: stretch; não for colocado na div pai as filhas vão ocupar a altura total da div pai.
+         * Se o align-items: stretch; não for colocado na div pai e usar um dos outros alig-item: ; as divs filha manterão as suas alturas origninais pai.
+
+         * alig-self: ; trata do posicionamento individual de cada elemento dentro da div pai.
+
+         align-items: center; centraliza verticalmente.
+         align-items: flex-start; coloca no top da div pai verticalmente.
+         align-items: flex-end; coloca na parte de baixo da div pai verticalmente.
+
+      * POSICIONAMENTO POR CONJUNTO *
+         Usa-se o align-content: ; igual ao align-items, só que ele pega todo o bloco e não item, pega o conjunto todo das div filhas.
+
+      * CRESCIMENTO DAS DIVS DENTRO DA DIV PAI *
+         flex-grow: 1 até +; ele faz com que os elementos cresçam de igual com base no crescimento da div pai.
+         Mas se chegar no limite da div pai, ele joga o proximo pra baixo.
+
+         * o flex-grow * é aplicado nas divs filhas e não a div pai.
+
+         O flex-grow pode ser usado individualmente entre elementos ou div dentro do container pai, como fazer crescer um elemento filho de maneira diferente dos outros.
+
+         * TAMANHO DE UM ELEMENTO DENTRO DE UM CONTAINER *
+         Ao invés de usar o flex-grow nas div ou elementos filhos, usa-se o flex: 1 até + (% ou px).
+         Ele e o flex-grow são colocados no elemento que se quer fazer crescer.
+
+      * gap * trata do espaçamento entre os elementos da div pai.
+
+      * flex-shrink: 1 até +; * Ao contrario do flex-grow ele encolhe os elementos a medida que a tela diminui
+
+      * flex-basis: px; reduz a na parte dominante do elemento ou o eixo principal.
+         Na horizontal o eixo dominante é o de baixo e na vertical é a parte de lado.
+
+      * order: 1 até +; trata da ordem do posicionamento dos elementos.
+
+   * :nth-child(1 até +) {} Ajuda a estilizar um item dentro de um tag sem class.
+
+   * EFEITOS DE MOVIMENTO DE DIV OU ELEMENTO *
+      transform: ; move os elemntos ou aplica animação nos elementos
+      transition: 0s até +; Trata da velocidade da mudança de cor ou etc dos elementos
+      backdrop-filter: blur(px) Parece que torna meio transparente
+      list-style-type: none; Tira a estilização das listas.
+
+      transform: translateX(px); movome pra o eixo horizontal + transition: segundos s ex: 2s
+      transform: translateY(px); movome pra o eixo vertical, valor positivo move pra baixo e negativo move pra cima.
+      transform: rotate(numero+deg); movome de maneira circular
+      transform: rotateX(numero+deg); gira na parte horizontal de maneira circular
+      transform: rotateY(numero+deg); gira na parte vertical de maneira circular
+      transform: scale(1 até +); estica o elemento de todas as partes, com scale(largura, altura);
+      transform: scaleX(1 até +); estica o elemento na parte horizontal
+      transform: scaleY(1 até +); estica o elemento na parte vertical
+
+      transform: translate(valordeX, valordeY)
+
+      O all faz com que todos que tiverem a propriedade tenham a mesma caracteristica:
+      ex.: transition: all 0.3s; todos que tiverem o transition terão o mesmo tempo de duração.
+
+      «««««««««««««««««««««««««««««««««««
+      Se no transition colocar um desses:
+      »»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»
+      ANIMAÇÔES
+      ease; a transição começadevagar depois acelera e depois desacelera
+      linea; do inico ao fim vai com a mesma veloidade
+      ease-in; começa devagar e termina mais rapido
+      ease-out; começa mais rapido e termina devagar
+      ease-in-out; começa devagar acelera no meio e desacelera no final
+
+      «««««««««
+      steps
+
+      Essa propriedade quebra a animação em partes
+      steps(1 até +); isso cocola-se dentro do transition
+      «««««««««
+
+      ««««««««««««
+      cubic-bezier
+
+      Ele cria um efeito de animação melhor que o steps, ele cria um efeito de transição em partes
+      Tambem coloca-se dentro do transition:
+      cubic-bezier(4 à 6 valores decimais ou não)
+      »»»»»»»»»»»»
+
+      Skew(); coloca-se dentro do transform e ele estic o elemento na obliqua no eixo em que está
+      SkewX(valor deg); deforma o elemento horizontalme
+      SkewY(valor deg); deforma o elemento verticalmente
+
+      ------------------
+      :ROOT{}
+      ------------------
+      :root{} : No CSS, :root é uma pseudoclasse que representa o elemento raiz de um documento HTML, que é quase sempre a tag <html>.
+
+      Na prática, ele tem uma função muito parecida com o seletor html, mas com uma grande vantagem: ele possui uma especificidade maior, o que significa que regras aplicadas nele têm preferência sobre regras aplicadas diretamente em html.
+
+      Para que ele é mais usado?
+      Hoje em dia, o uso mais comum do :root é para definir variáveis CSS globais (também chamadas de Custom Properties). Como o :root está no topo da árvore de elementos do documento, qualquer variável declarada nele fica acessível em qualquer lugar da sua página.
+
+      para manter a porpoção das formas dentro do site e manter a responsividade, coloca-se:
+      width: ; a tua escolha, mas no lugar da altura coloca-se um aspect-ratio: valor1 / valor2
+      ex.: width: 300px; aspect-ratio: 1/1 quadrado, ou aspect-ratio:  3/2 retangulo.
+
+      clamp(valor minimo, ideal vw, maximo) funciona com width, height, font-size etc...
+
+      -------------------------------------------
+      COmo dar aquele efeito de luz de festa kkkk:
+
+         @keyframes animate {
+               100% {
+                  filter: hue-rotate(360deg);
+               }
+            }
+
+         .container:hover {
+            animation: animate 1s linear infinite;
+         }
+      -------------------------------------------
