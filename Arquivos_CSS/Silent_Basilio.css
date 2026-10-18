@@ -18,17 +18,21 @@ body {
         color: red;
     }
 
-    button {
+    a {
         width: 150px;
         background-color: transparent;
         border: 1px solid red;
         border-radius: 10px;
+        color: red;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 500;
 
-        a {
-            color: red;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
+        &:hover { 
+            box-shadow: 0 0 15px red;
         }
     }
 
@@ -48,16 +52,25 @@ body {
             font-size: 18px;
             font-weight: 500;
             padding: 20px 10px 20px 40px;
+            position: relative;
+        }
+
+        &:has(input:focus) label {
+            transition: .5s;
+            display: none;
+        }
+
+        &:hover { 
+            box-shadow: 0 0 15px red;
         }
 
         label {
-            color: red;
             position: absolute;
             top: 50%;
+            left: 40px;
             transform: translateY(-50%);
-            margin-left: 40px;
-            font-size: 18px;
-            font-weight: 500;
+            color: red;
+            font-size: 16px;
         }
     }
     

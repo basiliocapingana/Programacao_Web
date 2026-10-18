@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: rgb(219, 7, 219);
+    font-size: 1rem;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.container:hover {
+    box-shadow: 0 0 20px 5px violet;
+    transition: .5s;
+    border-color: violet;
+
+    * {
+        transition: .5s;
+        color: violet;
+    }
+
+    h1 {
+        color: violet;
+        transition: .5s;
+    }
+
+    .input-form:has(input) {
+        input {
+            transition: .5s;
+            border-color: violet;
+
+            &::placeholder {
+                    color: violet;
+                }
+        }
+    }
+
+    .botao-login:has(button) {
+        button {
+            border-color: violet;
+            background-color: rgb(219, 7, 219);
+        }
+    }
+}
+
+.container {
+    box-shadow: 0 0 15px 2px rgb(219, 7, 219);
+    border: 1px solid rgb(219, 7, 219);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    width: 420px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+    h1 {
+        font-size: 1.8rem;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .form-login {
+        width: 100%;
+
+        .input-form {
+            width: 100%;
+            height: 50px;
+            background-color: transparent;
+            margin-bottom: 30px;
+
+            input {
+                
+                width: 100%;
+                height: 100%;
+                outline: none;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid rgb(219, 7, 219);
+
+                &::placeholder {
+                    color: rgb(219, 7, 219);
+                }
+            }
+        }
+
+        .mostrar-lembrar-senha {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+
+            input {
+                accent-color: violet;
+            }
+
+            label {
+                cursor: pointer;
+            }
+        }
+
+        .botao-login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            margin-bottom: 30px;
+
+            button {
+                width: 100%;
+                height: 50px;
+                border: 1px solid rgb(219, 7, 219);
+                background-color: transparent;
+                border-radius: 18px;
+                cursor: pointer;
+            }
+        }
+
+        .criar-conta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    }
+}
