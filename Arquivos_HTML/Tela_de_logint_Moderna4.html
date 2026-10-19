@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de login</title>
+    <link rel="stylesheet" href="../Arquivos_CSS/Tela_de_logint_Moderna4.css">
+</head>
+<body>
+    <header>
+        <nav class="navegadores">
+            <h1>Logo</h1>
+
+            <section class="nav-links">
+                <a href="#">Casa</a>
+                <a href="#">Loja</a>
+                <a href="#">Fale connosco</a>
+                <a href="#">Sobre nos</a>
+
+                <button>Login</button>
+            </section>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Login</h2>
+        <form action="#" class="form-box login">
+            <section class="form-input">
+                <input type="text" id="usuario" autocomplete="name" required>
+                <img class="input-img" src="../img/user3.png" alt="Icone de usuario da tela de login">
+                <label for="usuario">Usuario</label>
+            </section>
+
+            <section class="form-input">
+                <input type="password" id="senha" autocomplete="current-password" required>
+                <img class="input-img" src="../img/lock.png" alt="Icone de senha da tela de login">
+                <label for="sehna">Palavra passe</label>
+            </section>
+
+            <section class="mostrar-esqueci-senha">
+                <label for="mostrar-senha">
+                    <input type="checkbox" id="mostrar-senha">
+                    Mostrar senha
+                </label>
+
+                <a href="#">Esqueci a senha</a>
+            </section>
+
+            <section class="botao-login">
+                <button type="submit">Login</button>
+            </section>
+
+            <section class="criar-conta">
+                <p>Não tem conta? <a href="#">Criar conta</a></p>
+            </section>
+        </form>
+    </main>
+</body>
+</html>
