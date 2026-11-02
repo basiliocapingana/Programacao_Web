@@ -1,0 +1,166 @@
+================================================================================
+          GUIA COMPLETO DE HTML & CONCEITOS WEB - NOTAS DE AULA
+================================================================================
+
+1. HISTÓRIA E CRIAÇÃO
+--------------------------------------------------------------------------------
+- Criador do HTML: Timothy John Berners-Lee (Tim Berners-Lee)
+- Ano de Criação do HTML: 1990
+- Órgão Regulador: W3C (World Wide Web Consortium)
+- Criador do CSS: Håkon Wium Lie (proposto em 1994)
+- Primeiro Navegador (Browser): WorldWideWeb (1990), desenvolvido por Tim Berners-Lee.
+
+2. OS 3 PILARES DA PROGRAMAÇÃO WEB
+--------------------------------------------------------------------------------
+1. HTML (Hypertext Markup Language): Estruturação e marcação do conteúdo.
+2. CSS (Cascading Style Sheets): Estilização e posicionamento visual dos elementos.
+3. JavaScript: Comportamento, lógica e interatividade.
+
+3. ESTRUTURA BÁSICA E CARACTERÍSTICAS DO HTML5
+--------------------------------------------------------------------------------
+- O HTML NÃO é uma linguagem de programação, pois não é "Turing Complete" 
+  (não faz cálculos complexos, não toma decisões, não altera fluxo por si só).
+- Não é CASE SENSITIVE (não diferencia maiúsculas de minúsculas).
+- Arquivos usam extensões `.html` ou `.htm`.
+- Declaração de tipo de documento: <!DOCTYPE html>
+
+Estrutura Mínima:
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Título da Página</title>
+</head>
+<body>
+    <!-- Conteúdo da página -->
+</body>
+</html>
+
+4. DICIONÁRIO DE TAGS HTML MENCIONADAS
+--------------------------------------------------------------------------------
+
+[ESTRUTURA E METADADOS]
+- <html>        : Elemento raiz da árvore HTML.
+- <head>        : Contém metadados, codificação, títulos e links de configuração.
+- <body>        : Contém o conteúdo visível da página.
+- <title>       : Define o título da página exibido na aba do navegador.
+- <meta>        : Define metadados (ex: <meta charset="UTF-8"> para acentuação).
+
+[ELEMENTOS SEMÂNTICOS DE LAYOUT (HTML5)]
+- <header>      : Cabeçalho do documento ou de uma seção.
+- <nav>         : Agrupamento de links de navegação principal.
+- <main>        : Conteúdo principal e exclusivo da página.
+- <section>     : Seção genérica de conteúdo agrupado por tema.
+- <article>     : Conteúdo autônomo e independente (ex: post de blog).
+- <aside>       : Conteúdo secundário ou lateral de apoio.
+- <footer>      : Rodapé da página ou seção.
+
+[TÍTULOS E TEXTO]
+- <h1> a <h6>   : Níveis de títulos (h1 = maior relevância, h6 = menor).
+- <p>           : Parágrafo.
+- <hr>          : Linha horizontal divisória (tag sem fechamento).
+- <center>      : Centraliza elementos (OBS: Em desuso / deprecated; deve-se usar CSS).
+
+[FORMATAÇÃO DE TEXTO]
+- <b>           : Texto em negrito (estilístico).
+- <strong>      : Texto importante / negrito (semântico).
+- <i>           : Texto em itálico (estilístico).
+- <em>          : Texto enfatizado / itálico (semântico).
+- <mark>        : Texto destacado / marcado.
+- <small>       : Texto de tamanho reduzido.
+- <del>         : Texto excluído / tachado (semântico).
+- <s>           : Texto riscado.
+- <ins>         : Texto inserido (semântico).
+- <u>           : Texto sublinhado.
+- <sub>         : Texto em subscrito (ex: H₂O).
+- <sup>         : Texto em sobrescrito (ex: X²).
+
+[LISTAS]
+- <ol>          : Lista ordenada (Atributos: type="1|a|I").
+- <ul>          : Lista não ordenada (Atributos: type="disc|circle|square").
+- <li>          : Item de lista (usado dentro de <ol> e <ul>).
+- <dl>          : Lista de definições / descrições.
+- <dt>          : Termo da definição.
+- <dd>          : Descrição ou explicação do termo.
+
+[MÍDIAS E EMBUTIDOS]
+- <img />       : Inserção de imagens.
+  * src         : Caminho do arquivo de imagem.
+  * alt         : Texto alternativo (acessibilidade / fallback).
+  * title       : Descrição ao passar o mouse.
+  * width/height: Largura e altura.
+- <audio>       : Reprodução de áudio.
+  * Atributos   : controls, autoplay, loop, preload, src.
+- <video>       : Reprodução de vídeo.
+  * Atributos   : controls, width, height, src.
+- <source>      : Especifica fontes de mídia (vídeo/áudio) dentro das tags mãe.
+- <track>       : Adiciona legendas/subtítulos no vídeo.
+  * Atributos   : kind="subtitles", src="arquivo.vtt", srclang="pt-pt", label="Português", default.
+- <iframe>      : Quadro embutido para carregar outra página web dentro da atual.
+  * Atributos   : src, width, height, frameborder, scrolling, marginwidth, marginheight.
+
+[LINKS]
+- <a>           : Tag de âncora para criar links.
+  * href        : URL de destino.
+  * target      : "_blank" (abre em nova aba) ou "_self" (abre na mesma aba).
+
+[TABELAS]
+- <table>       : Declaração de tabela (Atributo: border).
+- <caption>     : Título / legenda da tabela.
+- <thead>       : Cabeçalho da tabela.
+- <tbody>       : Corpo de dados da tabela.
+- <tfoot>       : Rodapé da tabela.
+- <tr>          : Linha da tabela.
+- <th>          : Célula de cabeçalho da tabela (texto em negrito/centralizado).
+- <td>          : Célula de dados da tabela.
+- Atributos de mesclagem:
+  * colspan     : Expande a célula por N colunas.
+  * rowspan     : Expande a célula por N linhas.
+
+[FORMULÁRIOS E CONTROLES DE ENTRADA]
+- <form>        : Contêiner de formulário.
+  * action      : URL/Página para processar os dados.
+  * method      : Método de envio ("GET" via URL ou "POST" via corpo da requisição).
+  * name        : Nome do formulário.
+- <fieldset>    : Agrupa controles visualmente em uma caixa.
+- <legend>      : Legenda / título do <fieldset>.
+- <label>       : Rótulo / texto associado a um campo de formulário (atributo: for).
+- <textarea>    : Caixa de texto multilinha (Atributos: rows, cols).
+- <select>      : Lista suspensa (drop-down).
+- <option>      : Opção individual dentro do <select> (Atributo: selected).
+- <optgroup>    : Agrupamento de opções dentro do <select>.
+- <button>      : Botão clicável.
+- <progress>    : Barra de progresso (Atributos: value, max).
+
+[TIPOS DE INPUT (<input type="...">)]
+- text          : Caixa de texto simples.
+- password      : Campo de senha com caracteres mascarados.
+- email         : Validação automática de endereço de e-mail.
+- number        : Campo numérico.
+- date          : Selecionador de data.
+- datetime-local: Selecionador de data e hora.
+- time          : Campo de horário.
+- month / week  : Selecionador de mês/ano e semana.
+- checkbox      : Caixa de seleção (múltipla escolha).
+- radio         : Botão de rádio (escolha única entre grupo).
+- color         : Selecionador de cores em hexadecimal.
+- range         : Controle deslizante de intervalo.
+- file          : Upload de arquivos do dispositivo.
+- hidden        : Campo oculto para envio de dados invisíveis.
+- submit        : Botão de envio do formulário.
+- reset         : Botão de redefinição dos campos.
+- button        : Botão genérico.
+- search        : Campo de pesquisa.
+- tel           : Campo para número de telefone.
+- url           : Campo para endereço web.
+
+[ATRIBUTOS ÚTEIS EM INPUTS]
+- placeholder   : Texto instrutivo exibido quando o campo está vazio.
+- required      : Torna o preenchimento do campo obrigatório.
+- autofocus     : Define o foco automático do cursor no campo ao carregar a página.
+- disabled      : Desabilita o campo de entrada.
+- maxlength     : Limite máximo de caracteres permitidos.
+
+[SINTAXE DE COMENTÁRIOS]
+- HTML: <!-- Este é um comentário -->
+- WebVTT (Legendas): Formato de legenda de vídeo usando extensão `.vtt`.
