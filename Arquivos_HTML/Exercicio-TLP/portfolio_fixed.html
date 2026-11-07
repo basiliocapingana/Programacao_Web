@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Programação | Basílio António Capingana</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-red: red;
+            --dark-red: rgb(177, 6, 6);
+            --bg-dark: black;
+            --card-dark: black;
+            --card-hover: red;
+            --text-white: white;
+            --text-muted: #b0b0b0;
+            --border-color: rgb(173, 7, 7);
+            --shadow-red: 0 0 25px rgb(209, 4, 4);
+            --shadow-card: 0 0 15px rgb(249, 3, 3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            padding: 30px 20px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Profile Banner Header (Dark Theme + Red Accent) */
+        .profile-card {
+            background: var(--card-dark);
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: var(--shadow-red);
+            border-top: 5px solid var(--primary-red);
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-info h1 {
+            color: var(--text-white);
+            font-size: 28px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .profile-info h1 i {
+            color: var(--primary-red);
+        }
+
+        /* Efeito de Fogo / Entrada JS da Esquerda para a Direita */
+        #flameNameContainer {
+            display: inline-block;
+            position: relative;
+            transform: translateX(-120%);
+            opacity: 0;
+            transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s ease-in-out, text-shadow 0.5s ease;
+        }
+
+        .flame-active {
+            transform: translateX(0) !important;
+            opacity: 1 !important;
+            animation: flameGlow 2s infinite alternate;
+        }
+
+        @keyframes flameGlow {
+            0% {
+                text-shadow: 0 0 5px red, 0 0 10px darkred, 0 0 15px orange;
+                color: white;
+            }
+            50% {
+                text-shadow: 0 0 15px red, 0 0 25px rgb(255, 69, 0), 0 0 35px yellow;
+                color: rgb(255, 230, 230);
+            }
+            100% {
+                text-shadow: 0 0 8px red, 0 0 15px darkred, 0 0 20px rgb(255, 69, 0);
+                color: white;
+            }
+        }
+
+        .student-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            background-color: transparent;
+            color: var(--text-white);
+            padding: 6px 14px;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--primary-red);
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.2);
+        }
+
+        .badge i {
+            color: var(--primary-red);
+            margin-right: 5px;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-red);
+            color: var(--text-white);
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: var(--shadow-red);
+        }
+
+        .github-link:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.5);
+        }
+
+        /* Filter & Navigation Section */
+        .filter-section {
+            background: var(--card-dark);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .filter-section h2 {
+            color: var(--text-white);
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            background-color: #121212;
+            color: var(--text-white);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-red);
+            color: var(--text-white);
+            border-color: var(--primary-red);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Home View Section */
+        .home-view {
+            background: var(--card-dark);
+            border-radius: 14px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .home-view h2 {
+            color: var(--primary-red);
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .home-view p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 750px;
+            margin: 0 auto 25px auto;
+        }
+
+        .home-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: #151515;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-card);
+        }
+
+        .stat-card i {
+            font-size: 30px;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+        }
+
+        .stat-card h3 {
+            font-size: 18px;
+            color: var(--text-white);
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Projects & Repositories Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card-dark);
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            word-break: break-word;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-red);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.25);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-tag {
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: #2b1111;
+            color: var(--primary-red);
+            border: 1px solid var(--primary-red);
+            word-break: break-word;
+            max-width: 100%;
+        }
+
+        .visibility-badge {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        .project-title {
+            font-size: 18px;
+            color: var(--text-white);
+            margin-bottom: 10px;
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            word-break: break-word;
+        }
+
+        .code-preview {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            padding: 14px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            max-height: 140px;
+            overflow-y: auto;
+            border-left: 3px solid var(--primary-red);
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.8);
+            margin-bottom: 15px;
+        }
+
+        .repo-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: transparent;
+            color: var(--primary-red);
+            border: 1px solid var(--primary-red);
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.15);
+        }
+
+        .repo-btn:hover {
+            background-color: var(--primary-red);
+            color: var(--text-white);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header com Informações do Estudante -->
+    <header class="profile-card">
+        <div class="profile-info">
+            <h1>
+                <i class="fa-solid fa-user-gear"></i> 
+                <span id="flameNameContainer">Basílio António Capingana</span>
+            </h1>
+            <div class="student-details">
+                <span class="badge"><i class="fa-solid fa-hashtag"></i> Número: 08</span>
+                <span class="badge"><i class="fa-solid fa-users"></i> Turma: IG12A</span>
+                <span class="badge"><i class="fa-solid fa-door-open"></i> Sala: 52</span>
+                <span class="badge"><i class="fa-solid fa-sun"></i> Período: Diurno</span>
+            </div>
+        </div>
+        <div>
+            <a href="https://github.com/basiliocapingana?tab=repositories" target="_blank" class="github-link">
+                <i class="fa-brands fa-github fa-lg"></i> Ver Repositórios no GitHub
+            </a>
+        </div>
+    </header>
+
+    <!-- Navegação e Filtros de Categoria -->
+    <section class="filter-section">
+        <h2><i class="fa-solid fa-layer-group"></i> Navegação por Categorias, Linguagens e Repositórios</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filtrarTecnologia('home')"><i class="fa-solid fa-house"></i> Página Inicial</button>
+            <button class="filter-btn" onclick="filtrarTecnologia('repos')"><i class="fa-brands fa-github"></i> Meus Repositórios</button>
+            <button class="filter-btn" onclick="filtrarTecnologia('all')">Selecionar Todos</button>
+            <button class="filter-btn" onclick="filtrarTecnologia('html')">HTML</button>
+            <button class="filter-btn" onclick="filtrarTecnologia('css')">CSS</button>
+            <button class="filter-btn" onclick="filtrarTecnologia('c')">C</button>
+            <button class="filter-btn" onclick="filtrarTecnologia('csharp')">C#</button>
+            <button class="filter-btn" onclick="filtrarTecnologia('cpp')">C++</button>
+            <button class="filter-btn" onclick="filtrarTecnologia('js')">JavaScript</button>
+            <button class="filter-btn" onclick="filtrarTecnologia('python')">Python</button>
+        </div>
+    </section>
+
+    <!-- Visualização da Página Inicial (Home) -->
+    <section id="homeView" class="home-view">
+        <h2>Bem-vindo ao Meu Portfólio de Programação</h2>
+        <p>
+            Esta é a página inicial do meu portfólio de código. Aqui podes explorar programas e repositórios desenvolvidos nas linguagens 
+            <strong>HTML, CSS, C, C#, C++, JavaScript e Python</strong>. Clica na aba <strong>"Meus Repositórios"</strong> para ver e aceder diretamente aos meus repositórios do GitHub.
+        </p>
+        <div class="home-stats">
+            <div class="stat-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>7 Linguagens</h3>
+                <p>Projetos em HTML, CSS, C, C#, C++, JS e Python</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-folder-open"></i>
+                <h3>Repositórios GitHub</h3>
+                <p>Acesso direto a Programacao_Web, Python e mais</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-moon"></i>
+                <h3>Tema Dark Red</h3>
+                <p>Interface escura com detalhes em Vermelho e sombras</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Projetos e Repositórios -->
+    <main class="projects-grid" id="projectsGrid" style="display: none;">
+        
+        <!-- REPOSITÓRIO 1: Programacao_Web -->
+        <article class="project-card" data-tech="html" data-isrepo="true">
+            <div>
+                <div class="project-header">
+                    <span class="project-tag">HTML</span>
+                    <span class="visibility-badge">Public</span>
+                </div>
+                <h3 class="project-title">Programacao_Web</h3>
+                <p class="project-desc">Repositório público com exercícios, conceitos práticos e projetos de desenvolvimento web.</p>
+            </div>
+            <div>
+                <a href="https://github.com/basiliocapingana/Programacao_Web" target="_blank" class="repo-btn">
+                    <i class="fa-brands fa-github"></i> Entrar no Repositório
+                </a>
+            </div>
+        </article>
+
+        <!-- REPOSITÓRIO 2: Programacao_Web_do_Zero_ao_Avancado -->
+        <article class="project-card" data-tech="html" data-isrepo="true">
+            <div>
+                <div class="project-header">
+                    <span class="project-tag">HTML / CSS / JS</span>
+                    <span class="visibility-badge">Public</span>
+                </div>
+                <h3 class="project-title">Programacao_Web_do_Zero_ao_Avancado</h3>
+                <p class="project-desc">Estudo detalhado de HTML, CSS e JavaScript cobrindo conceitos desde os básicos aos avançados.</p>
+            </div>
+            <div>
+                <a href="https://github.com/basiliocapingana/Programacao_Web_do_Zero_ao_Avancado" target="_blank" class="repo-btn">
+                    <i class="fa-brands fa-github"></i> Entrar no Repositório
+                </a>
+            </div>
+        </article>
+
+        <!-- REPOSITÓRIO 3: Red_Room_App -->
+        <article class="project-card" data-tech="html" data-isrepo="true">
+            <div>
+                <div class="project-header">
+                    <span class="project-tag">HTML / UI</span>
+                    <span class="visibility-badge">Private</span>
+                </div>
+                <h3 class="project-title">Red_Room_App</h3>
+                <p class="project-desc">Aplicação privada com interface temática e componentes estruturados em HTML e Tailwind CSS.</p>
+            </div>
+            <div>
+                <a href="https://github.com/basiliocapingana/Red_Room_App" target="_blank" class="repo-btn">
+                    <i class="fa-brands fa-github"></i> Entrar no Repositório
+                </a>
+            </div>
+        </article>
+
+        <!-- REPOSITÓRIO 4: Python_do_Zero_ao_Avanvancado -->
+        <article class="project-card" data-tech="python" data-isrepo="true">
+            <div>
+                <div class="project-header">
+                    <span class="project-tag">Python</span>
+                    <span class="visibility-badge">Public</span>
+                </div>
+                <h3 class="project-title">Python_do_Zero_ao_Avanvancado</h3>
+                <p class="project-desc">Repositório com scripts, exercícios e lógica de programação em Python do nível básico ao avançado.</p>
+            </div>
+            <div>
+                <a href="https://github.com/basiliocapingana/Python_do_Zero_ao_Avanvancado" target="_blank" class="repo-btn">
+                    <i class="fa-brands fa-github"></i> Entrar no Repositório
+                </a>
+            </div>
+        </article>
+
+        <!-- PROJETO: CSS -->
+        <article class="project-card" data-tech="css" data-isrepo="false">
+            <div>
+                <div class="project-header">
+                    <span class="project-tag">CSS</span>
+                </div>
+                <h3 class="project-title">Tema Dark & Box Shadows</h3>
+                <p class="project-desc">Estilização moderna utilizando variáveis CSS, sombras projetadas (box-shadow) e design responsivo.</p>
+                <div class="code-preview">.profile-card {
+  background: #1e1e1e;
+  border-top: 5px solid #e74c3c;
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.35);
+}</div>
+            </div>
+        </article>
+
+        <!-- PROJETO: C -->
+        <article class="project-card" data-tech="c" data-isrepo="false">
+            <div>
+                <div class="project-header">
+                    <span class="project-tag">C</span>
+                </div>
+                <h3 class="project-title">Algoritmos & Ponteiros em C</h3>
+                <p class="project-desc">Manipulação direta de memória, alocação dinâmica e estruturas básicas em C puro.</p>
+                <div class="code-preview">#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Executando em C puro!\n");
+    return 0;
+}</div>
+            </div>
+        </article>
+
+        <!-- PROJETO: C# -->
+        <article class="project-card" data-tech="csharp" data-isrepo="false">
+            <div>
+                <div class="project-header">
+                    <span class="project-tag">C#</span>
+                </div>
+                <h3 class="project-title">Orientação a Objetos em C#</h3>
+                <p class="project-desc">Aplicação de conceitos de POO, classes, propriedades e manipulação de formulários em C# .NET.</p>
+                <div class="code-preview">using System;
+
+namespace SistemaAMS {
+    class Program {
+        static void Main() {
+            Console.WriteLine("Módulo C# ativo.");
+        }
+    }
+}</div>
+            </div>
+        </article>
+
+        <!-- PROJETO: C++ -->
+        <article class="project-card" data-tech="cpp" data-isrepo="false">
+            <div>
+                <div class="project-header">
+                    <span class="project-tag">C++</span>
+                </div>
+                <h3 class="project-title">Estruturas de Dados Avançadas</h3>
+                <p class="project-desc">Implementação de listas encadeadas, filas e busca binária de alta performance em C++.</p>
+                <div class="code-preview">#include &lt;iostream&gt;
+using namespace std;
+
+struct No {
+    int valor;
+    No* proximo;
+};</div>
+            </div>
+        </article>
+
+        <!-- PROJETO: JS -->
+        <article class="project-card" data-tech="js" data-isrepo="false">
+            <div>
+                <div class="project-header">
+                    <span class="project-tag">JavaScript</span>
+                </div>
+                <h3 class="project-title">Filtros Dinâmicos DOM</h3>
+                <p class="project-desc">Algoritmo em JS para filtrar cartões dinamicamente no DOM com transições e validação.</p>
+                <div class="code-preview">function ehPalindromo(str) {
+  let limpo = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return limpo === limpo.split('').reverse().join('');
+}</div>
+            </div>
+        </article>
+
+    </main>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const nameElement = document.getElementById('flameNameContainer');
+        setTimeout(() => {
+            nameElement.classList.add('flame-active');
+        }, 200);
+    });
+
+    function filtrarTecnologia(tech) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const homeView = document.getElementById('homeView');
+        const projectsGrid = document.getElementById('projectsGrid');
+        const cards = document.querySelectorAll('.project-card');
+
+        if (tech === 'home') {
+            homeView.style.display = 'block';
+            projectsGrid.style.display = 'none';
+        } else if (tech === 'repos') {
+            homeView.style.display = 'none';
+            projectsGrid.style.display = 'grid';
+            cards.forEach(card => {
+                if (card.getAttribute('data-isrepo') === 'true') {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        } else {
+            homeView.style.display = 'none';
+            projectsGrid.style.display = 'grid';
+
+            cards.forEach(card => {
+                if (tech === 'all' || card.getAttribute('data-tech') === tech) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
