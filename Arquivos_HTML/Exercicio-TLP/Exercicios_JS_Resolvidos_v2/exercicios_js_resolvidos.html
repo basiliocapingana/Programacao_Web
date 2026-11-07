@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolução dos Exercícios de JS - Monitores</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .header-section {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        /* Botão do Aluno com a mesma cor dos H2 (#2980b9) */
+        .btn-aluno {
+            background-color: rgb(121, 3, 121);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgb(235, 28, 235);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn-aluno:hover {
+            background-color: rgb(203, 16, 203);
+            transform: translateY(-2px);
+        }
+        
+        .card {
+            background: black;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: rgb(121, 3, 121);
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+        }
+        .card p {
+            color: white;
+            font-style: italic;
+        }
+        button.btn-ex {
+            background-color: rgb(121, 3, 121);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        button.btn-ex:hover {
+            background-color: rgb(203, 16, 203);
+        }
+        input, select, textarea {
+            padding: 8px;
+            margin: 5px 0;
+            width: 100%;
+            max-width: 400px;
+            background-color: transparent;
+            outline: none;
+            color: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: block;
+        }
+        .output {
+            margin-top: 12px;
+            padding: 12px;
+            border: 1px solid rgb(203, 16, 203);
+            background:transparent;
+            border-left: 5px solid rgb(203, 16, 203);
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        
+        /* Estilos do Exercício 2 (Rotação 360deg) */
+        .rotacao {
+            display: inline-block;
+            transition: transform 1s ease-in-out;
+            transform: rotate(360deg);
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .num-container {
+            font-size: 24px;
+            letter-spacing: 4px;
+            margin-top: 10px;
+        }
+
+        /* Modal e Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            backdrop-filter: blur(20px);
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 10px 25px rgb(203, 16, 203); /* Box Shadow com a cor azul #2980b9 */
+            border-top: 6px solid rgb(203, 16, 203);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .modal-header h3 {
+            margin: 0;
+            color: rgb(203, 16, 203);
+            font-size: 22px;
+        }
+        .close-btn {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+        .close-btn:hover {
+            color: violet;
+        }
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            a {
+                text-decoration: none;
+                color: rgb(203, 16, 203);
+                margin-left: 5px;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: violet;
+                }
+            }
+        }
+        .info-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid white;
+            font-size: 16px;
+            color: rgb(203, 16, 203);
+        }
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        .info-list strong {
+            color: rgb(203, 16, 203);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Resolução dos Exercícios de JavaScript</h1>
+    
+    <div class="header-section">
+        <p style="margin-bottom: 15px;">Elaborado por: Monitores</p>
+        <!-- Botão sobre o Aluno colocado antes do primeiro exercício -->
+        <button class="btn-aluno" onclick="abrirModal()">Sobre o Aluno</button>
+    </div>
+
+    <!-- Modal com informações do Aluno -->
+    <div id="modalAluno" class="modal-overlay" onclick="fecharModalFora(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Informações do Aluno</h3>
+                <button class="close-btn" onclick="fecharModal()">&times;</button>
+            </div>
+            <ul class="info-list">
+                <li><strong>NOME:</strong> Basílio António Capingana</li>
+                <li><strong>Github:</strong><a class="github" href="https://github.com/basiliocapingana" target="_blank">Basílio Capingana no Github</a></li>
+                <li><strong>Número:</strong> 08</li>
+                <li><strong>Turma:</strong> IG12A</li>
+                <li><strong>Sala:</strong> 52</li>
+                <li><strong>Período:</strong> Diurno</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Exercício 1 -->
+    <div class="card">
+        <h2>Exercício 1: Leitura Contínua e Condição de Parada</h2>
+        <p>Lê números continuamente via prompt e para ao receber 3 números negativos iguais consecutivos. Mostra a quantidade de primos, 5x o nº de neutros (0) e a soma dos negativos.</p>
+        <button class="btn-ex" onclick="executarEx1()">Executar Exercício 1</button>
+        <div id="out1" class="output">Aguardando execução...</div>
+    </div>
+
+    <!-- Exercício 2 -->
+    <div class="card">
+        <h2>Exercício 2: Rotação de 360° para o dígito 5</h2>
+        <p>Digita números abaixo. Se contiver o número 5, os dígitos 5 farão uma rotação de 360°.</p>
+        <input type="text" id="in2" placeholder="Digite números (ex: 15359)" oninput="executarEx2()">
+        <div id="out2" class="num-container"></div>
+    </div>
+
+    <!-- Exercício 3 -->
+    <div class="card">
+        <h2>Exercício 3: Soma e Fatorial de Números Separados por Ponto e Vírgula</h2>
+        <p>Recebe números separados por ';' via prompt, soma todos e calcula o fatorial da soma total.</p>
+        <button class="btn-ex" onclick="executarEx3()">Executar Exercício 3</button>
+        <div id="out3" class="output">Aguardando execução...</div>
+    </div>
+
+    <!-- Exercício 4 -->
+    <div class="card">
+        <h2>Exercício 4: Função de Soma com Alert</h2>
+        <p>Recebe dois números via prompt, soma-os e retorna o resultado num alert.</p>
+        <button class="btn-ex" onclick="executarEx4()">Executar Exercício 4</button>
+    </div>
+
+    <!-- Exercício 5 -->
+    <div class="card">
+        <h2>Exercício 5: Separação de Pares e Ímpares em Vetores</h2>
+        <p>Recebe vários números (separados por vírgula) e separa-os em dois vetores: Pares e Ímpares.</p>
+        <input type="text" id="in5" placeholder="Digite números separados por vírgula (ex: 1, 4, 7, 10)">
+        <button class="btn-ex" onclick="executarEx5()">Processar Vetores</button>
+        <div id="out5" class="output">Aguardando entrada...</div>
+    </div>
+
+    <!-- Exercício 6 -->
+    <div class="card">
+        <h2>Exercício 6: FizzBuzz (1 a 100)</h2>
+        <p>Múltiplos de 3 = "Fizz", de 5 = "Buzz", de ambos = "FizzBuzz".</p>
+        <button class="btn-ex" onclick="executarEx6()">Gerar FizzBuzz</button>
+        <div id="out6" class="output" style="max-height: 200px; overflow-y: auto;">Aguardando execução...</div>
+    </div>
+
+    <!-- Exercício 7 -->
+    <div class="card">
+        <h2>Exercício 7: Gerar 5 palavras a partir de uma palavra</h2>
+        <p>Gera variações (anagramas, sufixos/prefixos, transformações) a partir de uma palavra.</p>
+        <input type="text" id="in7" placeholder="Digite uma palavra (ex: Código)">
+        <button class="btn-ex" onclick="executarEx7()">Gerar Palavras</button>
+        <div id="out7" class="output">Aguardando entrada...</div>
+    </div>
+
+    <!-- Exercício 8 -->
+    <div class="card">
+        <h2>Exercício 8: Gerar 5 frases a partir de uma frase</h2>
+        <p>Gera 5 variações/contextos a partir de uma frase base.</p>
+        <input type="text" id="in8" placeholder="Digite uma frase (ex: O conhecimento é poder)">
+        <button class="btn-ex" onclick="executarEx8()">Gerar Frases</button>
+        <div id="out8" class="output">Aguardando entrada...</div>
+    </div>
+
+    <!-- Exercício 9 -->
+    <div class="card">
+        <h2>Exercício 9: Verificar Palíndromo</h2>
+        <p>Recebe via prompt (ou campo abaixo) e verifica se a entrada é um palíndromo.</p>
+        <button class="btn-ex" onclick="executarEx9()">Executar via Prompt</button>
+        <div id="out9" class="output">Aguardando execução...</div>
+    </div>
+
+    <!-- Exercício 10 -->
+    <div class="card">
+        <h2>Exercício 10: Contar e Sublinhar Vogais em um Nome</h2>
+        <p>Exemplo: Miguel Manuel -> M<u>i</u>g<u>u</u><u>e</u>l M<u>a</u>n<u>u</u><u>e</u>l</p>
+        <input type="text" id="in10" placeholder="Digite um nome (ex: Miguel Manuel)">
+        <button class="btn-ex" onclick="executarEx10()">Contar e Sublinhar</button>
+        <div id="out10" class="output">Aguardando entrada...</div>
+    </div>
+
+    <!-- Exercício 11 -->
+    <div class="card">
+        <h2>Exercício 11: Intercalar Letras Maiúsculas e Minúsculas</h2>
+        <p>Exemplo: seja autodidata. -> sEjA AuToDiDaTa.</p>
+        <input type="text" id="in11" placeholder="Digite uma frase minúscula">
+        <button class="btn-ex" onclick="executarEx11()">Intercalar</button>
+        <div id="out11" class="output">Aguardando entrada...</div>
+    </div>
+
+    <!-- Exercício 12 -->
+    <div class="card">
+        <h2>Exercício 12: Ordenar Palavras do Texto em Ordem Alfabética</h2>
+        <p>Ordena todas as palavras de um texto inserido.</p>
+        <button class="btn-ex" onclick="executarEx12()">Executar via Prompt</button>
+        <div id="out12" class="output">Aguardando execução...</div>
+    </div>
+
+    <!-- Exercício 13 -->
+    <div class="card">
+        <h2>Exercício 13: Inverter Texto (String Reverse)</h2>
+        <p>Exemplo: Luís -> siuL</p>
+        <button class="btn-ex" onclick="executarEx13()">Executar via Prompt</button>
+        <div id="out13" class="output">Aguardando execução...</div>
+    </div>
+
+    <!-- Exercício 14 -->
+    <div class="card">
+        <h2>Exercício 14: Remover todas as Vogais do Texto</h2>
+        <p>Remove as vogais (a, e, i, o, u) de um texto recebido.</p>
+        <button class="btn-ex" onclick="executarEx14()">Executar via Prompt</button>
+        <div id="out14" class="output">Aguardando execução...</div>
+    </div>
+
+    <!-- Exercício 15 -->
+    <div class="card">
+        <h2>Exercício 15: Divisão de 15 Elementos pelo Maior Valor</h2>
+        <p>Lê 15 números inteiros via prompt, descobre o maior valor e divide todos os elementos por ele.</p>
+        <button class="btn-ex" onclick="executarEx15()">Executar Exercício 15</button>
+        <div id="out15" class="output">Aguardando execução...</div>
+    </div>
+</div>
+
+<script>
+    // --- Funções do Modal ---
+    function abrirModal() {
+        document.getElementById('modalAluno').style.display = 'flex';
+    }
+    function fecharModal() {
+        document.getElementById('modalAluno').style.display = 'none';
+    }
+    function fecharModalFora(event) {
+        if (event.target.id === 'modalAluno') {
+            fecharModal();
+        }
+    }
+
+    // --- Exercício 1 ---
+    function ehPrimo(n) {
+        if (n <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) return false;
+        }
+        return true;
+    }
+
+    function executarEx1() {
+        let primos = 0;
+        let neutros = 0;
+        let somaNegativos = 0;
+        let ultimosNegativos = [];
+
+        while (true) {
+            let val = prompt("Exercício 1: Digite um número (ou cancele para sair):");
+            if (val === null) break;
+            let num = Number(val);
+            if (isNaN(num)) continue;
+
+            if (ehPrimo(num)) primos++;
+            if (num === 0) neutros++;
+            if (num < 0) {
+                somaNegativos += num;
+                if (ultimosNegativos.length === 0 || ultimosNegativos[ultimosNegativos.length - 1] === num) {
+                    ultimosNegativos.push(num);
+                } else {
+                    ultimosNegativos = [num];
+                }
+            } else {
+                ultimosNegativos = [];
+            }
+
+            if (ultimosNegativos.length === 3) {
+                alert("Condição de parada atingida: 3 números negativos iguais consecutivos (" + num + ")!");
+                break;
+            }
+        }
+
+        document.getElementById('out1').innerText = 
+            "Quantidade de números primos: " + primos + "\n" +
+            "Quíntuplo dos números neutros (0): " + (neutros * 5) + "\n" +
+            "Soma dos números negativos: " + somaNegativos;
+    }
+
+    // --- Exercício 2 ---
+    function executarEx2() {
+        let val = document.getElementById('in2').value;
+        let container = document.getElementById('out2');
+        container.innerHTML = '';
+
+        for (let char of val) {
+            let span = document.createElement('span');
+            span.textContent = char;
+            if (char === '5') {
+                span.classList.add('rotacao');
+            }
+            container.appendChild(span);
+        }
+    }
+
+    // --- Exercício 3 ---
+    function fatorial(n) {
+        if (n < 0) return "Não existe fatorial de número negativo";
+        if (n === 0 || n === 1) return 1n;
+        let res = 1n;
+        for (let i = 2n; i <= BigInt(n); i++) {
+            res *= i;
+        }
+        return res.toString();
+    }
+
+    function executarEx3() {
+        let entrada = prompt("Exercício 3: Digite números separados por ponto e vírgula (;):", "10;2;5;3");
+        if (!entrada) return;
+
+        let partes = entrada.split(';');
+        let soma = 0;
+        for (let p of partes) {
+            let n = parseFloat(p.trim());
+            if (!isNaN(n)) soma += n;
+        }
+
+        let fat = fatorial(soma);
+        document.getElementById('out3').innerText = 
+            "Soma dos números: " + soma + "\n" +
+            "Fatorial da soma (" + soma + "!): " + fat;
+    }
+
+    // --- Exercício 4 ---
+    function somarDoisNumeros(n1, n2) {
+        return n1 + n2;
+    }
+
+    function executarEx4() {
+        let a = prompt("Exercício 4: Digite o primeiro número:");
+        let b = prompt("Exercício 4: Digite o segundo número:");
+        if (a !== null && b !== null) {
+            let res = somarDoisNumeros(Number(a), Number(b));
+            alert("O resultado da soma é: " + res);
+        }
+    }
+
+    // --- Exercício 5 ---
+    function executarEx5() {
+        let txt = document.getElementById('in5').value;
+        let elementos = txt.split(',').map(x => Number(x.trim())).filter(x => !isNaN(x) && x !== 0);
+
+        let pares = [];
+        let impares = [];
+
+        elementos.forEach(num => {
+            if (num % 2 === 0) pares.push(num);
+            else impares.push(num);
+        });
+
+        document.getElementById('out5').innerText = 
+            "Vetor de Pares: [" + pares.join(', ') + "]\n" +
+            "Vetor de Ímpares: [" + impares.join(', ') + "]";
+    }
+
+    // --- Exercício 6 ---
+    function executarEx6() {
+        let res = [];
+        for (let i = 1; i <= 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0) res.push("FizzBuzz");
+            else if (i % 3 === 0) res.push("Fizz");
+            else if (i % 5 === 0) res.push("Buzz");
+            else res.push(i);
+        }
+        document.getElementById('out6').innerText = res.join(', ');
+    }
+
+    // --- Exercício 7 ---
+    function executarEx7() {
+        let pal = document.getElementById('in7').value.trim();
+        if (!pal) return;
+
+        let geradas = [
+            pal.toUpperCase(),
+            pal.toLowerCase(),
+            pal.split('').reverse().join(''),
+            "Super" + pal,
+            pal + "JS"
+        ];
+
+        document.getElementById('out7').innerText = "Palavras Geradas:\n1. " + geradas.join("\n2. ").replace(/\n(\d)/g, "\n$1");
+    }
+
+    // --- Exercício 8 ---
+    function executarEx8() {
+        let frase = document.getElementById('in8').value.trim();
+        if (!frase) return;
+
+        let geradas = [
+            "Afirmação: " + frase + " com certeza!",
+            "Pergunta: Será que " + frase.toLowerCase() + "?",
+            "Exclamação: Atenção! " + frase + "!",
+            "Inversa: " + frase.split(' ').reverse().join(' '),
+            "Em maiúsculas: " + frase.toUpperCase()
+        ];
+
+        document.getElementById('out8').innerText = "Frases Geradas:\n- " + geradas.join("\n- ");
+    }
+
+    // --- Exercício 9 ---
+    function executarEx9() {
+        let txt = prompt("Exercício 9: Digite uma palavra ou número para testar palíndromo:");
+        if (!txt) return;
+
+        let limpo = txt.toLowerCase().replace(/[^a-z0-9]/g, '');
+        let invertido = limpo.split('').reverse().join('');
+        let ehPalindromo = (limpo === invertido);
+
+        document.getElementById('out9').innerText = 
+            "Texto original: \"" + txt + "\"\n" +
+            "Resultado: " + (ehPalindromo ? "É UM PALÍNDROMO!" : "NÃO é um palíndromo.");
+    }
+
+    // --- Exercício 10 ---
+    function executarEx10() {
+        let nome = document.getElementById('in10').value;
+        if (!nome) return;
+
+        let vogaisRegex = /[aeiouáéíóúâêîôûãõ]/gi;
+        let totalVogais = 0;
+        let resultadoHTML = '';
+
+        for (let char of nome) {
+            if (char.match(vogaisRegex)) {
+                totalVogais++;
+                resultadoHTML += '<u>' + char + '</u>';
+            } else {
+                resultadoHTML += char;
+            }
+        }
+
+        document.getElementById('out10').innerHTML = 
+            "Total de vogais: " + totalVogais + "<br>" +
+            "Texto com vogais sublinhadas: " + resultadoHTML;
+    }
+
+    // --- Exercício 11 ---
+    function executarEx11() {
+        let frase = document.getElementById('in11').value;
+        let res = '';
+        let maiuscula = false;
+
+        for (let char of frase) {
+            if (char.match(/[a-zà-ú]/i)) {
+                res += maiuscula ? char.toUpperCase() : char.toLowerCase();
+                maiuscula = !maiuscula;
+            } else {
+                res += char;
+            }
+        }
+
+        document.getElementById('out11').innerText = "Saída: " + res;
+    }
+
+    // --- Exercício 12 ---
+    function executarEx12() {
+        let txt = prompt("Exercício 12: Digite um texto:");
+        if (!txt) return;
+
+        let palavras = txt.match(/\b[a-zà-ú0-9]+/gi) || [];
+        palavras.sort((a, b) => a.localeCompare(b, 'pt', { sensitivity: 'base' }));
+
+        document.getElementById('out12').innerText = "Palavras em ordem alfabética:\n" + palavras.join(' ');
+    }
+
+    // --- Exercício 13 ---
+    function executarEx13() {
+        let txt = prompt("Exercício 13: Digite um texto para inverter:");
+        if (!txt) return;
+
+        let invertido = txt.split('').reverse().join('');
+        document.getElementById('out13').innerText = "Texto Invertido: " + invertido;
+    }
+
+    // --- Exercício 14 ---
+    function executarEx14() {
+        let txt = prompt("Exercício 14: Digite um texto para remover as vogais:");
+        if (!txt) return;
+
+        let semVogais = txt.replace(/[aeiouáéíóúâêîôûãõ]/gi, '');
+        document.getElementById('out14').innerText = "Texto sem vogais: " + semVogais;
+    }
+
+    // --- Exercício 15 ---
+    function executarEx15() {
+        let vetor = [];
+        alert("Exercício 15: Você irá digitar 15 números inteiros.");
+        
+        for (let i = 0; i < 15; i++) {
+            let val = prompt("Digite o " + (i + 1) + "º número inteiro:");
+            if (val === null) return;
+            vetor.push(parseInt(val) || 0);
+        }
+
+        let maior = Math.max(...vetor);
+        let vetorDividido = vetor.map(x => (x / maior).toFixed(2));
+
+        document.getElementById('out15').innerText = 
+            "Vetor Original: [" + vetor.join(', ') + "]\n" +
+            "Maior Valor: " + maior + "\n" +
+            "Vetor Dividido pelo Maior: [" + vetorDividido.join(', ') + "]";
+    }
+</script>
+
+</body>
+</html>
