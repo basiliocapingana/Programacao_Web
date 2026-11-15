@@ -1,0 +1,174 @@
+body {
+    background-image: url(../img/wp12398524-apple-desktop-4k-wallpapers.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 90dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+* {
+    margin-top: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    color: white;
+}
+
+:root {
+    --text-color: white;
+    --font-size: 14px;
+    --grossura-font: 500;
+    --label-affter-top: 12px;
+    --font-h1: 2rem;
+    --font-botao-login: 1.2rem;
+    --label-and-border-top-color: rgb(0, 163, 160); 
+}
+
+.container {
+    border: 1px solid white;
+    padding: 30px;
+    width: 410px;
+    border-radius: 15px;
+    /* backdrop-filter: blur(2px); */
+
+    &:hover {
+        h1 {
+            transition: .9s;
+            color: var(--label-and-border-top-color);
+        }
+
+        p {
+            transition: .9s;
+            color: var(--label-and-border-top-color);
+        }
+    }
+
+    .mostrar-e-lembrar-senha label:hover{
+        transition: .9s;
+        color: var(--label-and-border-top-color);
+    }
+
+    a:hover {
+        color: var(--label-and-border-top-color);
+        transition: .9s;
+        text-decoration: underline;
+    }
+
+    .botao-login input:hover {
+        background-color: var(--label-and-border-top-color);
+        border: none;
+        opacity: 0.6;
+        transition: .9s;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: var(--font-h1);
+    }
+
+    .form-login {
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-input {
+        width: 100%;
+        height: 50px;
+        background-color:transparent;
+        position: relative;
+        margin-bottom: 30px;
+
+        input {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid white;
+            cursor: text;
+            padding-right: 30px;
+            font-size: var(--font-size);
+
+            &:focus,
+            &:valid {
+                border-color: var(--label-and-border-top-color);
+            }
+
+            &:focus~label,
+            &:valid~label {
+                top: -7px;
+                transition: .7s;
+                color: var(--label-and-border-top-color);
+                font-size: var(--label-affter-top);
+            }
+        }
+
+        label {
+            font-size: var(--font-size);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .mostrar-e-lembrar-senha {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        font-size: var(--font-size);
+
+        a {
+            text-decoration: none;
+        }
+
+        label {
+            margin-left: 10px;
+            cursor: pointer;
+
+            input {
+                cursor: pointer;
+                accent-color: var(--label-and-border-top-color);
+            }
+        }
+    }
+
+    .botao-login {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+
+        input {
+            font-size: var(--font-botao-login);
+            border: none;
+            border: 1px solid white;
+            outline: none;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border-radius: 10px;
+        }
+    }
+
+    .criar-conta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--font-size);
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
