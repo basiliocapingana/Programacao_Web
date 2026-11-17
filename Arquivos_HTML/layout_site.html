@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout 1</title>
+    <link rel="stylesheet" href="../Arquivos_CSS/layout_site.css">
+</head>
+<body>
+    <main class="container">
+        <nav class="barra-navegadora1">
+            <section class="menu-suspenso">
+                <input type="radio" id="abrir-menu" name="aparicao">
+                <label for="abrir-menu" class="abrir-menu">abrir menu</label>
+                <input type="radio" id="fechar-menu" checked name="aparicao">
+                <label for="fechar-menu" class="fechar-menu">Fechar menu</label>
+            </section>
+
+            <section class="menus-links">
+                <section class="links-normais">
+                    <a href="#">Inicio</a>
+                    <a href="#">Conversas</a>
+                    <a href="#">Suporte</a>
+                </section>
+                <a href="#" id="botao-login">Login</a>
+            </section>
+        </nav>
+
+        <section class="menu-oculto">
+            <section class="retangulo"></section>
+            <section class="retangulo"></section>
+            <section class="retangulo"></section>
+        </section>
+    </main>
+</body>
+</html>

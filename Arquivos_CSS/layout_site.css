@@ -1,0 +1,117 @@
+body {
+    background-color: black;
+    min-height: 100dvh;
+}
+
+* {
+    color: aqua;
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    text-decoration: none;
+}
+
+.barra-navegadora1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px 40px;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid aqua;
+    transition: .8s;
+
+    &:hover {
+        border-color: white;
+        box-shadow: 0 0 10px white;
+    }
+
+
+    .menu-suspenso {
+        & input[type="radio"] {
+        display: none;
+        }
+
+        label {
+            border: 1px solid aqua;
+            border-radius: 10px;
+            background-color: black;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .abrir-menu {
+            margin-right: 10px;
+        }
+    }
+
+    .menus-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .links-normais {
+            margin-right: 50px;
+            a {
+                margin-right: 20px;
+
+                &:hover {
+                    color: white;
+                    border-bottom: 1px solid white;
+                }
+            }
+        }
+
+        #botao-login {
+            background-color: black;
+            width: 120px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid aqua;
+            border-radius: 5px;
+            transition: .8s;
+
+            &:hover {
+                color: white;
+                border: 1px solid white;
+                box-shadow: 0 0 7px white;
+                background-color: aqua;
+            }
+        }
+    }
+}
+
+.menu-oculto {
+    width: 400px;
+    border: 1px solid white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: auto;
+    padding: 10px 5px;
+    display: none;
+
+    .retangulo {
+        width: 300px;
+        height: 180px;
+        border: 1px solid aqua;
+        margin-bottom: 10px;
+    }
+}
+
+#abrir-menu:checked~.abrir-menu {
+    background-color: gray;
+}
+
+#fechar-menu:checked~.fechar-menu {
+    background-color: gray;
+}
+
+.barra-navegadora1:has(#abrir-menu:checked)~ .menu-oculto {
+    display: block;
+}
+
+.barra-navegadora1:has(#fechar-menu:checked)~ .menu-oculto {
+    display: none;
+}
