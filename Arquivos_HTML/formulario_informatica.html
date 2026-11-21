@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dupla Programação | Casa</title>
+    <link rel="stylesheet" href="../Arquivos_CSS/formulario_informatica.css">
+</head>
+<body>
+    <main class="container">
+        <nav class="navebar">
+            <h1>Dulpa Programação</h1>
+
+            <section class="links-navegadores">
+                <section class="links-normais">
+                    <a href="#">Casa</a>
+                    <a href="#">Sobre nós</a>
+                    <a href="#">Fale connosco</a>
+                </section>
+
+                <section class="links-especiais">
+                    <button href="#" class="botoes-de-entrada" id="botao-login">Entrar</button>
+                    <button href="#" class="botoes-de-entrada" id="botao-cadastro">Cadastro</button>
+                </section>
+            </section>
+        </nav>
+        <section class="preenchimento-form">
+            <form action="#" class="form-input cadastro">
+                <header class="topo-do-form">
+                    <h2>Cadastro</h2>
+                    <section class="close"></section>
+                </header>
+                <section class="input-forms">
+                    <section class="input-form1">
+                        <input type="text" required autocomplete="name" id="nome-completo">
+                        <label for="nome-completo">Nome completo</label>
+
+                        <input type="date" required id="data-nascimento">
+
+                        <select name="Tipo de programador" id="Tipo-de-programador">
+                            <option value="Tipo de programador" selected>Tipo de programador</option>
+                            <option value="FullStack">FullStack</option>
+                            <option value="Desktop">Desktop</option>
+                            <option value="Mobile">Mobile</option>
+                            <option value="Desenvolvedor-de-jogos">Desenvolvedor de jogos</option>
+                        </select>
+                    </section>
+
+                    <section class="input-form2">
+                        <select name="estatuto-social" id="estatuto-social">
+                            <option value="Estatuto social">Estatuto Social</option>
+                            <option value="Programador">Programador</option>
+                            <option value="Professor">Professor</option>
+                            <option value="Estudante">Estudante</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+
+                        <select name="Pais" id="Pais">
+                            <option value="País">País</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Brasil">Brasil</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </section>
+                </section>
+                <section class="sobre-usuario">
+                    <section class="sobre-ti">
+                        <fieldset>
+                            <legend>Sobre você</legend>
+                            <textarea name="Sobre o usuário" id="sobre-o-usuario"></textarea>
+                        </fieldset>
+                    </section>
+
+                    <section class="area-branco">
+                        <h2>Área em Branco</h2>
+                    </section>
+                </section>
+
+                <button type="submit">Enviar as informaçōes</button>
+            </form>
+
+            <form action="#" class="form-input login">
+                <header class="topo-do-form">
+                    <h2>Login</h2>
+                    <section class="close"></section>
+                </header>
+
+                <section class="input-form">
+                    <section class="input-form">
+                        <input type="text" required autocomplete="name" id="nome-de-usuario">
+                        <label for="nome-de-usuario">Usuário</label>
+                    </section>
+
+                    <section class="input-form">
+                        <input type="password" required autocomplete="current-password" id="palavra-passe">
+                        <label for="palavra-passe">Palavra passe</label>
+                    </section>
+
+                    <section class="lembrar-e-esqueci-senha">
+                        <label for="mostra-senha">
+                            <input type="checkbox">
+                            Mostrar senha
+                        </label>
+
+                        <a href="#">Esqueci senha</a>
+                    </section>
+
+                    <section class="botao-login">
+                        <button>Login</button>
+                    </section>
+                </section>
+
+                <section class="apresentacao">
+                    <h2>Área em Branco</h2>
+                </section>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

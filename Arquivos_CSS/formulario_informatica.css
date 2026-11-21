@@ -1,0 +1,115 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    color: white;
+    text-decoration: none;
+}
+
+.navebar {
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    position: fixed;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .links-navegadores {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .links-normais {
+            margin-right: 20px;
+            a {
+                margin-right: 20px;
+                font-size: 16px;
+                font-weight: 500;
+                &:hover {
+                    border-bottom: 1px dashed white;
+                }
+            }
+        }
+
+        .links-especiais {
+
+            .botoes-de-entrada {
+                border: 1px solid white;
+                width: 100px;
+                height: 30px;
+                background-color: transparent;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 500;
+
+                &:hover {
+                    border: 1px dashed  white;
+                }
+            }
+
+            #botao-login {
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+.preenchimento-form {
+    border: 1px solid white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 740px;
+    padding: 20px;
+
+    .form-input {
+        width: 100%;
+    }
+
+    .topo-do-form {
+        border: 1px solid white;
+        margin-bottom: 20px;
+    }
+
+    .cadastro {
+        .input-forms {
+            border: 1px solid white;
+            padding: 20px;
+            display: flex;
+        }
+
+        .sobre-usuario {
+            border: 1px solid white;
+            display: flex;
+            justify-content: space-between;
+            .area-branco {
+                border: 1px solid white;
+                width: 50%;
+            }
+
+            .sobre-usuario {
+                border: 1px solid white;
+
+                .sobre-ti {
+                    width: 50%;
+                    border: 5px solid red;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+JAVASCRIPT
+
+Formas de usar o Javascript:
+    * Interna:
+        <head>
+            <script> alert ("Aprendendo Javascript")</script>
+        </head>
+    * Externa:
+        Na tag
