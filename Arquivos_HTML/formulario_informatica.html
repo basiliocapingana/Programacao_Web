@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dupla Programação | Casa</title>
     <link rel="stylesheet" href="../Arquivos_CSS/formulario_informatica.css">
 </head>
+
 <body>
     <main class="container">
         <nav class="navebar">
@@ -32,51 +34,45 @@
                 </header>
                 <section class="input-forms">
                     <section class="input-form1">
-                        <input type="text" required autocomplete="name" id="nome-completo">
-                        <label for="nome-completo">Nome completo</label>
+                        <section class="caixa-nc">
+                            <input type="text" required autocomplete="name" id="nome-completo">
+                            <label class="nome-completo-label" for="nome-completo">Nome completo</label>
+                        </section>
 
                         <input type="date" required id="data-nascimento">
-
-                        <select name="Tipo de programador" id="Tipo-de-programador">
-                            <option value="Tipo de programador" selected>Tipo de programador</option>
-                            <option value="FullStack">FullStack</option>
-                            <option value="Desktop">Desktop</option>
-                            <option value="Mobile">Mobile</option>
-                            <option value="Desenvolvedor-de-jogos">Desenvolvedor de jogos</option>
-                        </select>
                     </section>
 
                     <section class="input-form2">
-                        <select name="estatuto-social" id="estatuto-social">
-                            <option value="Estatuto social">Estatuto Social</option>
-                            <option value="Programador">Programador</option>
-                            <option value="Professor">Professor</option>
-                            <option value="Estudante">Estudante</option>
-                            <option value="Outro">Outro</option>
-                        </select>
+                        <section class="social">
+                            <select required name="estatuto-social" id="estatuto-social">
+                                <option value="Estatuto social" selected disabled>Estatuto Social</option>
+                                <option value="Programador">Programador</option>
+                                <option value="Professor">Professor</option>
+                                <option value="Estudante">Estudante</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </section>
 
-                        <select name="Pais" id="Pais">
-                            <option value="País">País</option>
-                            <option value="Angola">Angola</option>
-                            <option value="Brasil">Brasil</option>
-                            <option value="Portugal">Portugal</option>
-                            <option value="Outro">Outro</option>
-                        </select>
+                        <section class="tipo-programador">
+                            <select required name="Tipo de programador" id="Tipo-de-programador">
+                                <option value="Tipo de programador" selected disabled>Tipo de programador</option>
+                                <option value="FullStack">FullStack</option>
+                                <option value="Desktop">Desktop</option>
+                                <option value="Mobile">Mobile</option>
+                                <option value="Desenvolvedor-de-jogos">Desenvolvedor de jogos</option>
+                            </select>
+                        </section>
                     </section>
                 </section>
                 <section class="sobre-usuario">
                     <section class="sobre-ti">
                         <fieldset>
                             <legend>Sobre você</legend>
-                            <textarea name="Sobre o usuário" id="sobre-o-usuario"></textarea>
+                            <textarea required rows="1" spellcheck="false" data-ms-editor="false" name="Sobre o usuário"
+                                id="sobre-o-usuario"></textarea>
                         </fieldset>
                     </section>
-
-                    <section class="area-branco">
-                        <h2>Área em Branco</h2>
-                    </section>
                 </section>
-
                 <button type="submit">Enviar as informaçōes</button>
             </form>
 
@@ -87,19 +83,21 @@
                 </header>
 
                 <section class="input-form">
-                    <section class="input-form">
-                        <input type="text" required autocomplete="name" id="nome-de-usuario">
-                        <label for="nome-de-usuario">Usuário</label>
-                    </section>
+                    <section class="inputs">
+                        <section class="input-form">
+                            <input type="text" required autocomplete="name" id="nome-de-usuario">
+                            <label for="nome-de-usuario">Usuário</label>
+                        </section>
 
-                    <section class="input-form">
-                        <input type="password" required autocomplete="current-password" id="palavra-passe">
-                        <label for="palavra-passe">Palavra passe</label>
+                        <section class="input-form">
+                            <input type="password" required autocomplete="current-password" id="palavra-passe">
+                            <label for="palavra-passe">Palavra passe</label>
+                        </section>
                     </section>
 
                     <section class="lembrar-e-esqueci-senha">
-                        <label for="mostra-senha">
-                            <input type="checkbox">
+                        <label for="mostrar-senha">
+                            <input type="checkbox" id="mostrar-senha">
                             Mostrar senha
                         </label>
 
@@ -118,4 +116,5 @@
         </section>
     </main>
 </body>
+
 </html>

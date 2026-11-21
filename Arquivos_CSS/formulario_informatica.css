@@ -27,6 +27,7 @@ body {
 
     h1 {
         font-size: 1.5rem;
+        color: aqua;
     }
 
     .links-navegadores {
@@ -36,11 +37,15 @@ body {
 
         .links-normais {
             margin-right: 20px;
+
             a {
                 margin-right: 20px;
                 font-size: 16px;
                 font-weight: 500;
+                color: aqua;
+
                 &:hover {
+                    color: white;
                     border-bottom: 1px dashed white;
                 }
             }
@@ -57,9 +62,12 @@ body {
                 cursor: pointer;
                 font-size: 14px;
                 font-weight: 500;
+                color: aqua;
 
                 &:hover {
-                    border: 1px dashed  white;
+                    box-shadow: 0 0 5px aqua;
+                    transition: .5s;
+                    border-color: aqua;
                 }
             }
 
@@ -72,44 +80,307 @@ body {
 
 .preenchimento-form {
     border: 1px solid white;
+    box-shadow: 0 0 10px white;
     padding: 30px;
     border-radius: 10px;
     width: 740px;
     padding: 20px;
+
+    /* display: none; */
+    &:hover {
+        transition: .7s;
+        box-shadow: 0 0 10px aqua;
+        border-color: aqua;
+
+        * {
+            color: aqua;
+        }
+    }
 
     .form-input {
         width: 100%;
     }
 
     .topo-do-form {
-        border: 1px solid white;
-        margin-bottom: 20px;
+        /* border: 1px solid white; */
+        margin-bottom: 30px;
     }
 
     .cadastro {
+        /* border: 1px solid; */
+        /* display: none; */
+
         .input-forms {
-            border: 1px solid white;
-            padding: 20px;
+            /* border: 1px solid white; */
             display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            .input-form1 {
+                margin-right: 5px;
+                width: 50%;
+
+                /* margin-right: 10px; */
+                .caixa-nc {
+                    /* border: 1px solid; */
+                    width: 100%;
+                    margin-bottom: 10px;
+                    position: relative;
+
+                    input {
+                        width: 100%;
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+                        border-bottom: 1px solid white;
+                        height: 40px;
+                        font-size: 14px;
+                        padding-right: 30px;
+
+                        &:focus~label,
+                        &:valid~label {
+                            top: -7px;
+                            font-size: 14px;
+                            transition: .7s;
+                        }
+
+                        &:focus {
+                            border-color: aqua;
+                        }
+                    }
+
+                    label {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        font-size: 16px;
+                        pointer-events: none;
+                    }
+                }
+
+                #data-nascimento {
+                    width: 100%;
+                    height: 40px;
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                }
+            }
+
+            .input-form2 {
+                width: 50%;
+
+                /* margin-left: 10px; */
+                select {
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    appearance: none;
+
+                    option {
+                        background-color: black;
+                        font-size: 14px;
+                    }
+                }
+
+                .social {
+                    height: 40px;
+                    width: 100%;
+                    margin-bottom: 10px;
+
+                    select {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                .tipo-programador {
+                    height: 40px;
+                    width: 100%;
+
+                    select {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
         }
 
         .sobre-usuario {
-            border: 1px solid white;
+            /* border: 1px solid white; */
             display: flex;
             justify-content: space-between;
-            .area-branco {
-                border: 1px solid white;
-                width: 50%;
-            }
 
-            .sobre-usuario {
-                border: 1px solid white;
+            .sobre-ti {
+                /* border: 1px solid green; */
+                width: 100%;
+                height: 100%;
 
-                .sobre-ti {
-                    width: 50%;
-                    border: 5px solid red;
+                fieldset {
+                    width: 100%;
+                    height: 100%;
+                    border-color: white;
+                    flex: auto;
+
+                    legend {
+                        font-size: 19px;
+                        margin: 0 10px;
+                        padding: 10px;
+                    }
+
+                    textarea {
+                        width: 100%;
+                        height: 120px;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        padding-left: 10px;
+                        resize: none;
+                        font-size: 16px;
+                        text-align: justify;
+                    }
                 }
             }
+
+            &:has(textarea:focus) fieldset {
+                border-color: aqua;
+            }
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            outline: none;
+            border: 1px solid white;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 5px;
+            margin-top: 15px;
+            margin-bottom: 30px;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0 5px;
+                border-color: aqua;
+            }
+        }
+    }
+
+    .login {
+        /* display: none; */
+
+        .topo-do-form {
+            h2 {}
+        }
+
+        .inputs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 10px;
+
+            .input-form {
+                /* border: 1px solid; */
+                width: 50%;
+                height: 40px;
+                position: relative;
+
+                input {
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    padding-right: 10px;
+
+                    &:focus~label,
+                    &:valid~label {
+                        transition: .7s;
+                        top: -5px;
+                        font-size: 12px;
+                    }
+
+                    &:focus {
+                        border-color: aqua;
+                    }
+                }
+
+                label {
+                    pointer-events: none;
+                    font-size: 14px;
+                    font-weight: 500;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        .lembrar-e-esqueci-senha {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            input {
+                margin-right: 8px;
+                accent-color: aqua;
+                cursor: pointer;
+            }
+
+            label {
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            a {
+                font-size: 16px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .botao-login {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                width: 50%;
+                height: 100%;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                border: 1px solid white;
+                cursor: pointer;
+                border-radius: 8px;
+                font-weight: 500;
+                font-size: 16px;
+
+                &:hover {
+                    transition: .7s;
+                    box-shadow: 0 0 5px aqua;
+                    border-color: aqua;
+                }
+            }
+        }
+
+        .apresentacao {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }

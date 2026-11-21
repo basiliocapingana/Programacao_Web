@@ -29,7 +29,7 @@ body {
 
     .menu-suspenso {
         & input[type="radio"] {
-        display: none;
+            display: none;
         }
 
         label {
@@ -52,6 +52,7 @@ body {
 
         .links-normais {
             margin-right: 50px;
+
             a {
                 margin-right: 20px;
 
@@ -108,10 +109,10 @@ body {
     background-color: gray;
 }
 
-.barra-navegadora1:has(#abrir-menu:checked)~ .menu-oculto {
+.barra-navegadora1:has(#abrir-menu:checked)~.menu-oculto {
     display: block;
 }
 
-.barra-navegadora1:has(#fechar-menu:checked)~ .menu-oculto {
+.barra-navegadora1:has(#fechar-menu:checked)~.menu-oculto {
     display: none;
 }
