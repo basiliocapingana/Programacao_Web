@@ -1,0 +1,10 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "window.zoomLevel": 1,
+    "editor.renderLineHighlight": "gutter",
+    "editor.formatOnSave": true,
+    "editor.autoIndent": "full",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "editor.guides.bracketPairs": true,
+    "liveServer.settings.donotShowInfoMsg": true
+}

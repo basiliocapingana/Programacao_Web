@@ -1,0 +1,182 @@
+body {
+    background-color: rgb(6, 3, 46);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    color: brown;
+}
+
+:root {
+    --font-text: 14px;
+    --grossura-da-font: 600;
+    --cor-top-botoes: rgb(190, 76, 76);
+    --cor-text-botoes: black;
+    --texto-p: white;
+    --background-card: rgb(4, 4, 29);
+    --background-ler-mais: rgb(133, 254, 81);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    .card {
+        width: 300px;
+        min-height: 350px;
+        height: fit-content;
+        border-radius: 20px;
+        padding: 50px 30px;
+        position: relative;
+        background-color: var(--background-card);
+        box-shadow: 0 0 8px var(--background-card);
+
+        details {
+
+
+            &[open] summary {
+                background-color: var(--cor-top-botoes)
+            }
+
+            summary {
+                position: absolute;
+                bottom: 0px;
+                margin-bottom: 10px;
+                width: 100px;
+                height: 40px;
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                list-style: none;
+                padding: 12px 20px;
+                width: fit-content;
+                font-weight: bold;
+                border: none;
+                font-size: var(--font-text);
+                font-weight: var(--grossura-da-font);
+                color: var(--cor-text-botoes);
+                background-color: var(--background-ler-mais);
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+                &::-webkit-details-marker {
+                    display: none;
+                }
+            }
+
+            a {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-decoration: none;
+                color: var(--cor-top-botoes);
+                font-size: var(--font-text);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        p {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: var(--font-text);
+            color: var(--texto-p);
+            word-spacing: 2px;
+            line-height: 1.3;
+            text-align: justify;
+            overflow: hidden;
+            overflow-wrap: break-word;
+            max-height: 200px;
+            transition: max-height 0.5s ease;
+
+            b {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: var(--font-text);
+                color: var(--texto-p);
+                word-spacing: 2px;
+                line-height: 1.3;
+                text-align: justify;
+            }
+        }
+    }
+
+    .card-1 {
+        .top-botao1 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+
+            section {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                width: 70px;
+                height: 35px;
+                border-radius: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: var(--font-text);
+                font-weight: var(--grossura-da-font);
+                background-color: var(--cor-top-botoes);
+                color: var(--cor-text-botoes);
+            }
+        }
+    }
+
+    .card-2 {
+        .top-botoes2 {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+            section {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                width: 70px;
+                height: 35px;
+                border-radius: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: var(--font-text);
+                font-weight: var(--grossura-da-font);
+                background-color: var(--cor-top-botoes);
+                color: var(--cor-text-botoes);
+            }
+        }
+    }
+
+    .card-3 {
+        .top-botoes3 {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+            section {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                width: 70px;
+                height: 35px;
+                border-radius: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: var(--font-text);
+                font-weight: var(--grossura-da-font);
+                background-color: var(--cor-top-botoes);
+                color: var(--cor-text-botoes);
+            }
+        }
+    }
+}
